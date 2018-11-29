@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Physiotherapy</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+<style>
+body, html {
+   padding:auto;
+margin:auto;
+width:auto;
+height:auto;
+background-size: 100% 100%;
+background-image:url(physiotherapy.jpg); 
+background-position: center;
+background-repeat: no-repeat;
+  
+}
+.container{
+        width:auto;
+        height:auto;
+      padding-top: auto;
+    padding-bottom: auto;
+}
+.menu-bar{     
+    width: 100%;
+   /* list-style: none;*/
+   
+    box-shadow: 5px 5px 5px grey;
+    background: rgba(2,2,2,0.2);
+     align-self: center;
+    padding: auto;
+    margin: auto;
+    width: auto;
+    height: auto;
+         
+}
+.menu-bar li a:link,
+.menu-bar li a:visited {
+    background-color: nocolor;
+    color:white;
+     display:inline-block;
+    list-style-type: none;
+    text-decoration:none;
+    font-weight:bold;
+   /* margin: 0 0 0.2em 0;*/
+    font-size: 1.3em; 
+     padding:0px;
+margin:0px;
+    }
+.menu-bar li {
+    list-type-style:none;
+    display: inline-block;
+    padding: auto;
+    margin: auto;
+    width: auto;
+    height: auto;
+        position:center;
+        padding-right: 20px;
+        padding-bottom:10px;
+    padding-top: 10px;
+    }
+.menu-bar li:hover{
+        -webkit-transform:scale(1.4,1.4);
+        -ms-transform: scale(1.4,1.4);
+        transform:scale(1.4,1.4);   
+    color:grey;
+      
+    }
+
+.clear{
+    clear:both;
+}
+
+#current a { color: #ff0000; }
+    #finishing{
+        color:Red;
+    }
+    
+    #textDiv{
+        border-style:solid;
+        width:70%;
+        float:center;
+        background-color:aliceblue;
+        opacity:0.75;
+        margin: auto;
+        -webkit-transform: translateX(10px); 
+        -moz-transform: translateX(10px); 
+        -ms-transform: translateX(10px); 
+        transform: translateX(10px);
+          
+    }
+    
+    
+</style>
+    <body>
+   
+          
+        <section id="mainBody">
+               <div class="container"  >
+                    <ul class="menu-bar"align="center">
+                        <li ><a href="index.html">Home&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+                        <li ><a href="profile.html">Profile&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+                        <li><a href="programs.html">Programs&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+                        <li id="current"><a href="physiotherapy.html">Physiotherapy&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+                        <li><a href="extraFacilities.html">Extra Facilities&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+                        <li><a href="shop.html">Shop&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+                         <li><a href="prices.html">Prices&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+                        <li><a href="announcements.html">Announcements&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+                        <li><a href="contact.html">Contact Us&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+              </ul>      
+        
+               <table align="center">
+                   <tr>
+                       <th> <br><br> <p><img src="pain.jpg " ></p></th>
+   
+                    </tr>
+                  
+                   <tr>
+    
+                       <th><br><label for ="Day" ><font color="white" font size="4">Choose Day</font></label>
+                       <select>
+                        <option value="Monday">Monday</option>
+                        <option value="Tuesday">Tuesday</option>
+                        <option value="Wednesday">Wednesday</option>
+                        <option value="Thursday">Thursday</option>
+                        <option value="Friday">Friday</option>
+                        <option value="Saturday">Saturday</option>
+                    </select>
+                  <br>    
+                       </th>
+                   </tr>
+                   <tr>
+   
+                    <th> <br><label for="Hour"><font color="white" font size="4" >Choose Time</font></label>
+                        <select>
+                        <option value="Monday">10:00-11:00</option>
+                        <option value="Tuesday">11:00-12:00</option>
+                        <option value="Wednesday">12:00-13:00</option>
+                        <option value="Thursday">15:00-16:00</option>
+                        <option value="Friday">16:00-17:00</option>
+                        <option value="Saturday">17:0-18:00</option>
+                       </select>
+                       <br>
+                       
+                        </th>
+                    </tr>
+                    
+                    <tr>
+                        <th><br> <label for="Hour"><font color="white" font size="4">Description Of Problem</font></label></th>
+                   </tr>
+                    <tr>  
+                        <th> <textarea name="AdditionalNotes"id="AdditionalNotes" cols="50"rows="5" placeholder="Please enter the problem you suffer."></textarea></th> 
+                   </tr>
+                <tr>  
+                  <th><br><button type="submit">Submit</button></th>
+                   
+                   </table> 
+                
+            <div align="right">  <img src="logo.jpg" height=180px; width:180px; ></div>
+          
+           
+       
+                   
+           </div>
+       
+      </section>
+</body>
+</html>
