@@ -1,0 +1,198 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400');
+
+.cover {
+     background-image: linear-gradient(
+      rgba(0, 0, 0, 0.20),
+      rgba(0, 0, 0, 0.20)
+    ),url(../img/gym-cover.jpg);
+    background-size: cover;
+  
+    height: 100vh;
+}
+.nav-item a {
+    font-family: 'Open Sans', sans-serif;
+    
+}
+.bg-custom {
+    background-color: white;
+}
+.nav-item {
+    background-color: white;
+}
+
+.nav-item a:hover {
+    color: #78a32f!important;
+}
+.main-content {
+    color: white;
+    font-size: 1.2rem;
+    font-family: 'Open Sans', sans-serif;
+}
+.welcome {
+    color: white;
+    padding-bottom: 50px;
+}
+.round {
+    border-radius: 28px;
+    border: none;
+   
+} 
+
+.color {
+    background-color: #78a32f;
+}
+
+.button-main {
+    padding-top: 50px;
+}
+
+/* SHOP */
+
+.products-section {
+    background-color: #bdcccd;
+    
+}
+
+.shop-cover {
+     background-image: linear-gradient(
+      rgba(0, 0, 0, 0.30),
+      rgba(0, 0, 0, 0.30)
+    ),url(../img/shop-cover.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    height: 40vh;
+}
+.shop-cover h1 {
+    font-family: 'Open Sans', sans-serif;
+    color: white;
+    
+}
+.shop-cover p {
+    font-family: 'Open Sans', sans-serif;
+    color: white;
+    font-size: 1.2rem;
+}
+.padding-row {
+    margin-top: 30px;
+}
+.card-width {
+    width: 18rem;
+}
+@media (min-width: 768px) and (max-width: 991px) { 
+
+    .card-width {
+        width: 14rem;
+    }
+
+}
+
+@media (max-width: 767px) { 
+    .col-margin {
+        margin-top: 30px;
+    }
+    .card-width {
+        width: 25rem;
+    }
+    .card {
+    margin: 0 auto; /* Added */
+        float: none; 
+    }
+}
+/* --END OF SHOP -- */
+
+.color-footer {
+    background-color:  #16425B;
+}
+.color-footer p {
+    color: aliceblue;
+}
+.footer-details h1 {
+    color: aliceblue;
+    font-family: 'Open Sans', sans-serif; 
+    font-size: 1.2rem;
+}
+.footer-details p {
+    
+    font-family: 'Open Sans', sans-serif;  
+}
+.footer-details {
+    margin-top: 25px;
+}
+.icon {
+    display: table-cell;
+    vertical-align: middle;
+   
+}
+i.fas.fa-mobile-alt {
+   position: relative;
+    width: 70px;
+   bottom: 10px;
+    padding: 15px;
+    border-radius: 50%;
+    background-color: #e8f0d9;
+    color: #78a32f;
+   
+    font-size:40px;
+    float:left;
+    display:block;
+    text-align:center;
+    
+}
+i.fas.fa-map-marker-alt {
+    position: relative;
+    width: 70px;
+   bottom: 10px;
+    padding: 15px;
+    border-radius: 50%;
+    background-color: #e8f0d9;
+    color: #78a32f;
+   
+    font-size:40px;
+    float:left;
+    display:block;
+    text-align:center;
+}
+.top-margin {
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+.top-margin-cstm {
+    margin-top:15px;
+}
+i.fab.fa-facebook {
+    position: relative;
+    width: 70px;
+   bottom: 10px;
+    padding: 15px;
+    border-radius: 50%;
+  font-size:45px;
+     color: #78a32f;
+    text-align:center;
+}
+.loc {
+    
+    padding: 20px;
+    color: dimgray;
+    display: table-cell;
+    vertical-align: top;
+    font-style:'Open Sans', sans-serif;
+    font-size:15px;
+    line-height:1.43em;
+  
+}
+#top-jumpo {
+    margin-bottom: 0;
+}
+#top-jumpo2 {
+    margin-bottom: 0;
+}
+.color-footer {
+    background-color: white;
+}
+.page-footer {
+    height: 100%;
+    font-family: 'Open Sans', sans-serif;
+}
+.page-footer p {
+    color: dimgray;
+}
