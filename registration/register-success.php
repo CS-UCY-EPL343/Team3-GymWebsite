@@ -1,39 +1,4 @@
-<?php
- session_start();
-require_once'regChecker.php';
-$app = new Checker();
- 
- 
-$register_error_message = '';
 
-if (!empty($_POST['btnRegister'])) {
-    if ($_POST['name'] == "") {
-        $register_error_message = 'Name field is required!';
-    } else if ($_POST['surname'] == "") {
-        $register_error_message = 'Surname field is required!';
-    } else if ($_POST['email'] == "") {
-        $register_error_message = 'Email field is required!';
-    } else if ($_POST['username'] == "") {
-        $register_error_message = 'Username field is required!';
-    } else if ($_POST['password'] == "") {
-        $register_error_message = 'Password field is required!';
-    } else if (!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
-        $register_error_message = 'Invalid email address!';
-    } else if ($app->isEmail($DBcon,$_POST['email'])) {
-        $register_error_message = 'Email is already in use!';
-    } else if ($app->isUsername($DBcon,$_POST['username'])) {
-        $register_error_message = 'Username is already in use!';
-    } else {
-    
-
-    $customer_id=$app->Register($DBcon,$_POST['name'],$_POST['surname'],$_POST['telephone'],$_POST['email'], $_POST['username'], $_POST['password'], $_POST['sex'] );
-      
-        $_SESSION['customer_id'] = $customer_id;
-        
-        header("Location: register-success.php");
-    }
-}
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -62,9 +27,9 @@ if (!empty($_POST['btnRegister'])) {
       <a class="navbar-brand ml-auto mx-auto" href="#">
           <img src="../img/logo-test.png" alt="" width="70" height="90">
         </a>
-     <ul class="navbar-nav navbar-light bg-light ml-auto">
+    <ul class="navbar-nav navbar-light bg-light ml-auto">
       <li class="nav-item">
-        <a class="nav-link" href="../index.html"><i class="fas fa-home fa-fw"> </i>Home </a>
+        <a class="nav-link" href="index.html"><i class="fas fa-home fa-fw"> </i>Home </a>
       </li>
       <li class="nav-item">
           <a class="nav-link" href="../profile.html"> <i class="fas fa-user fa-fw"></i>Profile</a>
@@ -85,9 +50,6 @@ if (!empty($_POST['btnRegister'])) {
          <li class="nav-item">
         <a class="nav-link" href="../announcements.html"><i class="fas fa-bullhorn fa-fw"></i>Announcements</a>
       </li>
-          <li class="nav-item">
-        <a class="nav-link" href="registration/login.php"><i class="fas fa-key fa-fw"></i>Login</a>
-      </li>
     </ul>
     
   </div>
@@ -100,60 +62,7 @@ if (!empty($_POST['btnRegister'])) {
       <div class="col-sm-12 col-md-12 col-lg-9 mx-auto">
         <div class="card card-signin my-5">
           <div class="card-body">
-            <h5 class="card-title text-center">Register</h5>
-               <?php
-             
-            if ($register_error_message != "") {
-                echo '<div class="alert alert-danger"><strong>Error: </strong> ' . $register_error_message . '</div>';
-            }
-        
-             
-            ?>
-           <form action="register.php" method="post" class="form-signin">
-              <div class="form-label-group">
-                <input type="text" id="inputEmail" class="form-control" name="name" placeholder="*Name" />
-              
-              </div>
-               <div class="form-label-group">
-                <input type="text" class="form-control" name="surname" placeholder="*Surname" />
-                
-              </div>
-               <div class="form-label-group">
-                <input type="number" id="inputEmail" class="form-control" name="telephone" placeholder="Telephone" />
-              
-              </div>
-               <div class="form-label-group">
-                <input type="text" id="inputEmail" class="form-control" name="email" placeholder="*Email address" />
-                
-              </div>
-               <div class="form-label-group">
-                <input type="text" class="form-control" name="username" placeholder="*Username" />
-                
-              </div>
-              <div class="form-label-group">
-                <input type="password" id="inputPassword" class="form-control" name="password" placeholder="Password"/>
-                
-              </div>
-            <div class="form-check-inline">
-            <label class="form-check-label">
-            <input type="radio" class="form-check-input" name="sex">Male
-            </label>
-            </div>
-               <div class="form-check-inline">
-            <label class="form-check-label">
-            <input type="radio" class="form-check-input" name="sex">Female
-            </label>
-            </div>
-            <div class="form-check-inline ">
-            <label class="form-check-label">
-            <input type="radio" class="form-check-input" name="sex">Other
-            </label>
-            </div>
-               
-             <div class="padding">
-              <input type="submit" class="btn btn-lg btn-register btn-block text-uppercase" name="btnRegister" value="Register"/>
-               </div>
-            </form>
+            <div class="alert alert-success">Your account is succesfully created. Please check your inbox for more information.</div>
                
           </div>
         </div>
