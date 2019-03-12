@@ -24,6 +24,9 @@ import android.annotation.TargetApi;
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -50,11 +53,21 @@ public class MainActivity extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
 
 
-        //setContentView(R.layout.activity_main);
         WebView myWebView = (WebView) findViewById(R.id.webview);
-        //myWebView.loadUrl("http://cproject.in.cs.ucy.ac.cy/gym/");
-        myWebView.loadUrl("https://www.google.com");
 
+        //setContentView(R.layout.activity_main);
+
+        myWebView.getSettings().setJavaScriptEnabled(true);
+        myWebView.loadUrl("http://cproject.in.cs.ucy.ac.cy/gym/");
+        //myWebView.loadUrl("https://www.google.com");
+
+        myWebView.setWebViewClient(new WebViewClient() {
+            @Override
+            public boolean shouldOverrideUrlLoading(WebView view, WebResourceRequest request) {
+                view.loadUrl(request.getUrl().toString());
+                return false;
+            }
+        });
 
 
     }
@@ -97,19 +110,132 @@ public class MainActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_camera) {
-            // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
+        if (id == R.id.home) {
 
-        } else if (id == R.id.nav_slideshow) {
+            WebView myWebView = (WebView) findViewById(R.id.webview);
 
-        } else if (id == R.id.nav_manage) {
+            //setContentView(R.layout.activity_main);
 
-        }/* else if (id == R.id.nav_share) {
+            myWebView.getSettings().setJavaScriptEnabled(true);
+            myWebView.loadUrl("http://cproject.in.cs.ucy.ac.cy/gym/");
+            //myWebView.loadUrl("https://www.google.com");
 
-        } else if (id == R.id.nav_send) {
+            myWebView.setWebViewClient(new WebViewClient() {
+                @Override
+                public boolean shouldOverrideUrlLoading(WebView view, WebResourceRequest request) {
+                    view.loadUrl(request.getUrl().toString());
+                    return false;
+                }
+            });
+        } else if (id == R.id.profile) {
 
-        }  */
+            WebView myWebView = (WebView) findViewById(R.id.webview);
+
+            //setContentView(R.layout.activity_main);
+
+            myWebView.getSettings().setJavaScriptEnabled(true);
+            myWebView.loadUrl("http://cproject.in.cs.ucy.ac.cy/gym/shop/profile.php");
+            //myWebView.loadUrl("https://www.google.com");
+
+            myWebView.setWebViewClient(new WebViewClient() {
+                @Override
+                public boolean shouldOverrideUrlLoading(WebView view, WebResourceRequest request) {
+                    view.loadUrl(request.getUrl().toString());
+                    return false;
+                }
+            });
+
+        } else if (id == R.id.programs) {
+
+            WebView myWebView = (WebView) findViewById(R.id.webview);
+
+            //setContentView(R.layout.activity_main);
+
+            myWebView.getSettings().setJavaScriptEnabled(true);
+            myWebView.loadUrl("http://cproject.in.cs.ucy.ac.cy/gym/shop/programs.php");
+            //myWebView.loadUrl("https://www.google.com");
+
+            myWebView.setWebViewClient(new WebViewClient() {
+                @Override
+                public boolean shouldOverrideUrlLoading(WebView view, WebResourceRequest request) {
+                    view.loadUrl(request.getUrl().toString());
+                    return false;
+                }
+            });
+
+        } else if (id == R.id.services) {
+
+            WebView myWebView = (WebView) findViewById(R.id.webview);
+
+            //setContentView(R.layout.activity_main);
+
+            myWebView.getSettings().setJavaScriptEnabled(true);
+            myWebView.loadUrl("http://cproject.in.cs.ucy.ac.cy/gym/shop/services.php");
+            //myWebView.loadUrl("https://www.google.com");
+
+            myWebView.setWebViewClient(new WebViewClient() {
+                @Override
+                public boolean shouldOverrideUrlLoading(WebView view, WebResourceRequest request) {
+                    view.loadUrl(request.getUrl().toString());
+                    return false;
+                }
+            });
+
+        }else if (id == R.id.shop) {
+
+            WebView myWebView = (WebView) findViewById(R.id.webview);
+
+            //setContentView(R.layout.activity_main);
+
+            myWebView.getSettings().setJavaScriptEnabled(true);
+            myWebView.loadUrl("http://cproject.in.cs.ucy.ac.cy/gym/shop/shop.php");
+            //myWebView.loadUrl("https://www.google.com");
+
+            myWebView.setWebViewClient(new WebViewClient() {
+                @Override
+                public boolean shouldOverrideUrlLoading(WebView view, WebResourceRequest request) {
+                    view.loadUrl(request.getUrl().toString());
+                    return false;
+                }
+            });
+
+        } else if (id == R.id.prices) {
+
+            WebView myWebView = (WebView) findViewById(R.id.webview);
+
+            //setContentView(R.layout.activity_main);
+
+            myWebView.getSettings().setJavaScriptEnabled(true);
+            myWebView.loadUrl("http://cproject.in.cs.ucy.ac.cy/gym/shop/prices.php");
+            //myWebView.loadUrl("https://www.google.com");
+
+            myWebView.setWebViewClient(new WebViewClient() {
+                @Override
+                public boolean shouldOverrideUrlLoading(WebView view, WebResourceRequest request) {
+                    view.loadUrl(request.getUrl().toString());
+                    return false;
+                }
+            });
+
+        } else if (id == R.id.announcements) {
+
+            WebView myWebView = (WebView) findViewById(R.id.webview);
+
+            //setContentView(R.layout.activity_main);
+
+            myWebView.getSettings().setJavaScriptEnabled(true);
+            myWebView.loadUrl("http://cproject.in.cs.ucy.ac.cy/gym/shop/announcements.php");
+            //myWebView.loadUrl("https://www.google.com");
+
+            myWebView.setWebViewClient(new WebViewClient() {
+                @Override
+                public boolean shouldOverrideUrlLoading(WebView view, WebResourceRequest request) {
+                    view.loadUrl(request.getUrl().toString());
+                    return false;
+                }
+            });
+
+        }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);

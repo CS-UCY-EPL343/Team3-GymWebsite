@@ -5,36 +5,32 @@
 
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/nav_camera"
-            android:icon="@drawable/ic_menu_camera"
+            android:id="@+id/home"
+            android:icon="@drawable/home_tab"
             android:title="Home" />
         <item
-            android:id="@+id/nav_gallery"
-            android:icon="@drawable/ic_menu_gallery"
+            android:id="@+id/profile"
+            android:icon="@drawable/profile_tab"
             android:title="Profile" />
         <item
-            android:id="@+id/nav_slideshow"
-            android:icon="@drawable/ic_menu_slideshow"
+            android:id="@+id/programs"
+            android:icon="@drawable/programs_tab"
             android:title="Programs" />
         <item
-            android:id="@+id/nav_manage"
-            android:icon="@drawable/ic_menu_manage"
-            android:title="Physiotherapy" />
+            android:id="@+id/services"
+            android:icon="@drawable/services_tab"
+            android:title="Services" />
         <item
-            android:id="@+id/nav_camera2"
-            android:icon="@drawable/ic_menu_camera"
-            android:title="Extra Facilities" />
-        <item
-            android:id="@+id/nav_gallery2"
-            android:icon="@drawable/ic_menu_gallery"
+            android:id="@+id/shop"
+            android:icon="@drawable/shop_tab"
             android:title="Shop" />
         <item
-            android:id="@+id/nav_slideshow2"
-            android:icon="@drawable/ic_menu_slideshow"
+            android:id="@+id/prices"
+            android:icon="@drawable/prices_tab"
             android:title="Prices" />
         <item
-            android:id="@+id/nav_manage2"
-            android:icon="@drawable/ic_menu_manage"
+            android:id="@+id/announcements"
+            android:icon="@drawable/announcements_tab"
             android:title="Announcements" />
     </group>
 <!--
