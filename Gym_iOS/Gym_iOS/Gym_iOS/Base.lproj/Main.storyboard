@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Home-->
+        <scene sceneID="hNz-n2-bh7">
+            <objects>
+                <viewController id="9pv-A4-QxB" customClass="FirstViewController" customModule="Gym_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="tsR-hK-woN">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pLt-Hj-Uar">
+                                <rect key="frame" x="0.0" y="20" width="375" height="598"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="pLt-Hj-Uar" firstAttribute="bottom" secondItem="PQr-Ze-W5v" secondAttribute="bottom" id="9UM-KW-6Gt"/>
+                            <constraint firstItem="pLt-Hj-Uar" firstAttribute="top" secondItem="PQr-Ze-W5v" secondAttribute="top" id="BOc-16-g7k"/>
+                            <constraint firstItem="pLt-Hj-Uar" firstAttribute="leading" secondItem="PQr-Ze-W5v" secondAttribute="leading" id="Whx-hb-JPu"/>
+                            <constraint firstItem="pLt-Hj-Uar" firstAttribute="trailing" secondItem="PQr-Ze-W5v" secondAttribute="trailing" id="e3h-oP-Eo6"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="PQr-Ze-W5v"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Home" image="588a6686d06f6719692a2d1a.png" id="acW-dT-cKf"/>
+                    <connections>
+                        <outlet property="webview" destination="pLt-Hj-Uar" id="VpM-0U-vtP"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="749.60000000000002" y="-320.68965517241384"/>
+        </scene>
+        <!--Programs-->
+        <scene sceneID="8UF-az-SAi">
+            <objects>
+                <viewController id="dec-6l-W53" customClass="ThirdViewController" customModule="Gym_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="CJg-3k-uM5">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rCk-0X-ZfH">
+                                <rect key="frame" x="0.0" y="20" width="375" height="598"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="375" id="tWy-6s-HNA"/>
+                                </constraints>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="rCk-0X-ZfH" firstAttribute="top" secondItem="s6O-fO-jLb" secondAttribute="top" id="1Ad-eB-NZB"/>
+                            <constraint firstItem="rCk-0X-ZfH" firstAttribute="trailing" secondItem="s6O-fO-jLb" secondAttribute="trailing" id="Cfr-KK-lU4"/>
+                            <constraint firstItem="rCk-0X-ZfH" firstAttribute="bottom" secondItem="s6O-fO-jLb" secondAttribute="bottom" id="mI9-eJ-uFf"/>
+                            <constraint firstItem="rCk-0X-ZfH" firstAttribute="leading" secondItem="s6O-fO-jLb" secondAttribute="leading" id="pOB-oP-fOy"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="s6O-fO-jLb"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Programs" image="dumbbell.png" id="OF9-H5-uab"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="webview" destination="rCk-0X-ZfH" id="zEW-SP-tIP"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2Yj-xj-biR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="749.60000000000002" y="1051.1244377811095"/>
+        </scene>
+        <!--Profile-->
+        <scene sceneID="wg7-f3-ORb">
+            <objects>
+                <viewController id="8rJ-Kc-sve" customClass="SecondViewController" customModule="Gym_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="QS5-Rx-YEW">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EXy-1O-Nsz">
+                                <rect key="frame" x="0.0" y="20" width="375" height="598"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="EXy-1O-Nsz" firstAttribute="leading" secondItem="O1u-W8-tvY" secondAttribute="leading" id="37z-q8-mPs"/>
+                            <constraint firstItem="EXy-1O-Nsz" firstAttribute="trailing" secondItem="O1u-W8-tvY" secondAttribute="trailing" id="AM2-KU-mgn"/>
+                            <constraint firstItem="EXy-1O-Nsz" firstAttribute="bottom" secondItem="O1u-W8-tvY" secondAttribute="bottom" id="fDW-il-Iy2"/>
+                            <constraint firstItem="EXy-1O-Nsz" firstAttribute="top" secondItem="O1u-W8-tvY" secondAttribute="top" id="rCz-dh-dFd"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="O1u-W8-tvY"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Profile" image="User_Account_Person_Avatar_Profile_Man-512 17-27-39-967.png" id="cPa-gy-q4n" userLabel="Profile"/>
+                    <connections>
+                        <outlet property="webview" destination="EXy-1O-Nsz" id="loI-gh-Ybs"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="749.60000000000002" y="359.37031484257875"/>
+        </scene>
+        <!--Services-->
+        <scene sceneID="RqG-NV-AIm">
+            <objects>
+                <viewController id="9nO-ur-65U" customClass="FourthViewController" customModule="Gym_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="dBo-by-E5a">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="r9d-7J-6ZL">
+                                <rect key="frame" x="0.0" y="20" width="375" height="598"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="r9d-7J-6ZL" firstAttribute="leading" secondItem="83h-OJ-epH" secondAttribute="leading" id="K1V-jU-3Oz"/>
+                            <constraint firstItem="r9d-7J-6ZL" firstAttribute="top" secondItem="83h-OJ-epH" secondAttribute="top" id="WIc-SK-H2G"/>
+                            <constraint firstItem="r9d-7J-6ZL" firstAttribute="trailing" secondItem="83h-OJ-epH" secondAttribute="trailing" id="gCp-XM-GqE"/>
+                            <constraint firstItem="r9d-7J-6ZL" firstAttribute="bottom" secondItem="83h-OJ-epH" secondAttribute="bottom" id="jOY-GS-qgh"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="83h-OJ-epH"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Services" image="94349-200.png" id="2fg-Fq-OJD"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="webview" destination="r9d-7J-6ZL" id="a9g-7w-P49"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kVx-Xl-KMU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="749.60000000000002" y="1763.568215892054"/>
+        </scene>
+        <!--Shop-->
+        <scene sceneID="YaP-v2-xvH">
+            <objects>
+                <viewController id="1IE-Re-2IW" customClass="FifthViewController" customModule="Gym_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="O3R-zB-ZD6">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nDT-lD-kbi">
+                                <rect key="frame" x="0.0" y="20" width="375" height="598"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="nDT-lD-kbi" firstAttribute="top" secondItem="QmU-2D-Xs1" secondAttribute="top" id="3FT-7m-Rvv"/>
+                            <constraint firstItem="nDT-lD-kbi" firstAttribute="leading" secondItem="QmU-2D-Xs1" secondAttribute="leading" id="IDO-XM-U6s"/>
+                            <constraint firstItem="nDT-lD-kbi" firstAttribute="bottom" secondItem="QmU-2D-Xs1" secondAttribute="bottom" id="IdB-pj-Fe3"/>
+                            <constraint firstItem="nDT-lD-kbi" firstAttribute="trailing" secondItem="QmU-2D-Xs1" secondAttribute="trailing" id="y5Z-z4-sEo"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="QmU-2D-Xs1"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Shop" image="shopping-01-512-2.png" id="Vrw-HO-c4C"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="webview" destination="nDT-lD-kbi" id="LQK-7K-BVk"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aun-PZ-bO6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1701.5999999999999" y="-321.58920539730138"/>
+        </scene>
+        <!--Prices-->
+        <scene sceneID="8Y7-3m-gaK">
+            <objects>
+                <viewController id="Y9M-xW-ttQ" customClass="SixthViewController" customModule="Gym_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ld4-yb-0RU">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0fN-MX-lsT">
+                                <rect key="frame" x="0.0" y="20" width="375" height="598"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="0fN-MX-lsT" firstAttribute="bottom" secondItem="XAd-gK-xsU" secondAttribute="bottom" id="5oT-vq-dss"/>
+                            <constraint firstItem="0fN-MX-lsT" firstAttribute="leading" secondItem="XAd-gK-xsU" secondAttribute="leading" id="6Kj-kh-yyr"/>
+                            <constraint firstItem="0fN-MX-lsT" firstAttribute="trailing" secondItem="XAd-gK-xsU" secondAttribute="trailing" id="Ccc-zC-Pnb"/>
+                            <constraint firstItem="0fN-MX-lsT" firstAttribute="top" secondItem="XAd-gK-xsU" secondAttribute="top" id="O7Y-Kw-gXk"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="XAd-gK-xsU"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Prices" image="789377-200.png" id="ciA-Pv-9Pq"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="webview" destination="0fN-MX-lsT" id="q3K-SY-5vv"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CI0-gy-4Li" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1701.5999999999999" y="358.4707646176912"/>
+        </scene>
+        <!--Announcements-->
+        <scene sceneID="Mk4-sT-6fc">
+            <objects>
+                <viewController id="Pxs-Ph-JvY" customClass="SeventhViewController" customModule="Gym_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="VXh-Jj-MfX">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IzE-6q-AB2">
+                                <rect key="frame" x="0.0" y="20" width="375" height="598"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="IzE-6q-AB2" firstAttribute="bottom" secondItem="v7H-k6-cKW" secondAttribute="bottom" id="TaW-fg-Jxz"/>
+                            <constraint firstItem="IzE-6q-AB2" firstAttribute="trailing" secondItem="v7H-k6-cKW" secondAttribute="trailing" id="bVF-ZF-dpW"/>
+                            <constraint firstItem="IzE-6q-AB2" firstAttribute="top" secondItem="v7H-k6-cKW" secondAttribute="top" id="gWy-TX-DaM"/>
+                            <constraint firstItem="IzE-6q-AB2" firstAttribute="leading" secondItem="v7H-k6-cKW" secondAttribute="leading" id="mNS-jo-EIJ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="v7H-k6-cKW"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Announcements" image="791858.png" id="m8W-xa-kaF"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="webview" destination="IzE-6q-AB2" id="jOA-no-uGz"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Zsl-db-dX4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1701.5999999999999" y="1050.224887556222"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="yl2-sM-qoP">
+            <objects>
+                <tabBarController id="49e-Tb-3d3" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="W28-zg-YXA">
+                        <rect key="frame" x="0.0" y="975" width="768" height="49"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="9pv-A4-QxB" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
+                        <segue destination="8rJ-Kc-sve" kind="relationship" relationship="viewControllers" id="lzU-1b-eKA"/>
+                        <segue destination="dec-6l-W53" kind="relationship" relationship="viewControllers" id="kwe-Dh-6G9"/>
+                        <segue destination="9nO-ur-65U" kind="relationship" relationship="viewControllers" id="Gx5-cO-0I8"/>
+                        <segue destination="1IE-Re-2IW" kind="relationship" relationship="viewControllers" id="gXa-g1-VRJ"/>
+                        <segue destination="Y9M-xW-ttQ" kind="relationship" relationship="viewControllers" id="cF8-Tt-gUE"/>
+                        <segue destination="Pxs-Ph-JvY" kind="relationship" relationship="viewControllers" id="UXD-rW-pBI"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="0.0" y="0.0"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="588a6686d06f6719692a2d1a.png" width="45" height="45"/>
+        <image name="789377-200.png" width="31" height="31"/>
+        <image name="791858.png" width="31" height="31"/>
+        <image name="94349-200.png" width="42" height="42"/>
+        <image name="User_Account_Person_Avatar_Profile_Man-512 17-27-39-967.png" width="38" height="38"/>
+        <image name="dumbbell.png" width="40" height="40"/>
+        <image name="shopping-01-512-2.png" width="40" height="40"/>
+    </resources>
+</document>
