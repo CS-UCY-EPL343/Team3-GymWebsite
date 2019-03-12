@@ -28,6 +28,8 @@
 		79D10BF1221C5D8000C1387F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 79D10BEF221C5D8000C1387F /* LaunchScreen.storyboard */; };
 		79D10BFC221C5D8000C1387F /* Gym_iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79D10BFB221C5D8000C1387F /* Gym_iOSTests.swift */; };
 		79D10C07221C5D8000C1387F /* Gym_iOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79D10C06221C5D8000C1387F /* Gym_iOSUITests.swift */; };
+		79F4043E223876AB000ED83C /* UI_Icons_2-06-512.png in Resources */ = {isa = PBXBuildFile; fileRef = 79F4043D223876AB000ED83C /* UI_Icons_2-06-512.png */; };
+		79F40442223877D7000ED83C /* EightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79F40441223877D7000ED83C /* EightViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +77,8 @@
 		79D10C02221C5D8000C1387F /* Gym_iOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Gym_iOSUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		79D10C06221C5D8000C1387F /* Gym_iOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gym_iOSUITests.swift; sourceTree = "<group>"; };
 		79D10C08221C5D8000C1387F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		79F4043D223876AB000ED83C /* UI_Icons_2-06-512.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "UI_Icons_2-06-512.png"; path = "../app_icons/UI_Icons_2-06-512.png"; sourceTree = "<group>"; };
+		79F40441223877D7000ED83C /* EightViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EightViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +121,7 @@
 				79ACDADE2231837200557F68 /* plus-box-512.png */,
 				79ACDADF2231837200557F68 /* shopping-01-512-2.png */,
 				79ACDAE02231837200557F68 /* User_Account_Person_Avatar_Profile_Man-512 17-27-39-967.png */,
+				79F4043D223876AB000ED83C /* UI_Icons_2-06-512.png */,
 			);
 			sourceTree = "<group>";
 		};
@@ -133,6 +138,7 @@
 		79D10BE3221C5D7F00C1387F /* Gym_iOS */ = {
 			isa = PBXGroup;
 			children = (
+				79F40441223877D7000ED83C /* EightViewController.swift */,
 				79D10BE4221C5D7F00C1387F /* AppDelegate.swift */,
 				79D10BE6221C5D7F00C1387F /* FirstViewController.swift */,
 				79D10BE8221C5D7F00C1387F /* SecondViewController.swift */,
@@ -277,6 +283,7 @@
 				79ACDAEA2231837300557F68 /* dumbbell.png in Resources */,
 				79ACDAE72231837300557F68 /* shopping-01-512-2.png in Resources */,
 				79ACDAEB2231837300557F68 /* 789377-200.png in Resources */,
+				79F4043E223876AB000ED83C /* UI_Icons_2-06-512.png in Resources */,
 				79ACDAE92231837300557F68 /* 94349-200.png in Resources */,
 				79D10BEC221C5D7F00C1387F /* Main.storyboard in Resources */,
 				79ACDAE52231837300557F68 /* 791858.png in Resources */,
@@ -306,6 +313,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				79F40442223877D7000ED83C /* EightViewController.swift in Sources */,
 				79105A33223806420058BCB4 /* FifthViewController.swift in Sources */,
 				79105A35223806530058BCB4 /* SixthViewController.swift in Sources */,
 				79105A372238065E0058BCB4 /* SeventhViewController.swift in Sources */,
