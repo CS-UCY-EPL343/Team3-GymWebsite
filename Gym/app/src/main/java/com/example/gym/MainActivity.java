@@ -235,6 +235,24 @@ public class MainActivity extends AppCompatActivity
                 }
             });
 
+        } else if (id == R.id.login) {
+
+            WebView myWebView = (WebView) findViewById(R.id.webview);
+
+            //setContentView(R.layout.activity_main);
+
+            myWebView.getSettings().setJavaScriptEnabled(true);
+            myWebView.loadUrl("http://cproject.in.cs.ucy.ac.cy/gym/registration/login.php");
+            //myWebView.loadUrl("https://www.google.com");
+
+            myWebView.setWebViewClient(new WebViewClient() {
+                @Override
+                public boolean shouldOverrideUrlLoading(WebView view, WebResourceRequest request) {
+                    view.loadUrl(request.getUrl().toString());
+                    return false;
+                }
+            });
+
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
