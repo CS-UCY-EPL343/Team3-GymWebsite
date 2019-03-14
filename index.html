@@ -24,88 +24,96 @@
         
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <a class="navbar-brand ml-auto mx-auto" href="#">
-          <img src="/img/logo-test.png" alt="" width="70" height="90">
+          <img src="img/logo-test.png" alt="" width="70" height="90">
         </a>
-    <ul class="navbar-nav navbar-light bg-light ml-auto">
+     <ul class="navbar-nav navbar-light bg-light ml-auto">
       <li class="nav-item">
-        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="index.html"><i class="fas fa-home fa-fw"> </i>Home </a>
       </li>
       <li class="nav-item">
-          <a class="nav-link" href="#">Profile</a>
+          <a class="nav-link" href="../profile.html"> <i class="fas fa-user fa-fw"></i>Profile</a>
       </li>
      <li class="nav-item">
-        <a class="nav-link" href="#">Programs</a>
+        <a class="nav-link" href="../programs.html"><i class="fas fa-dumbbell fa-fw"></i>Programs</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Physiotherapy</a>
-      </li>
+    
           <li class="nav-item">
-        <a class="nav-link" href="#">Extra Facilities</a>
+        <a class="nav-link" href="../extra-facilities.html"><i class="fas fa-calendar-check fa-fw"></i>Extra Facilities</a>
       </li>
          <li class="nav-item">
-        <a class="nav-link" href="#">Shop</a>
+        <a class="nav-link" href="shop/shop.php"><i class="fas fa-shopping-cart fa-fw"></i>Shop</a>
       </li>
          <li class="nav-item">
-        <a class="nav-link" href="#">Prices</a>
+        <a class="nav-link" href="../prices.html"><i class="fas fa-dollar-sign fa-fw"></i>Prices</a>
       </li>
          <li class="nav-item">
-        <a class="nav-link" href="#">Announcements</a>
+        <a class="nav-link" href="announcements/announcement.php"><i class="fas fa-bullhorn fa-fw"></i>Announcements</a>
+      </li>
+         <li class="nav-item">
+        <a class="nav-link" href="registration/login.php"><i class="fas fa-key fa-fw"></i>Login</a>
       </li>
     </ul>
     
   </div>
 </nav>
   
-<div class="jumbotron jumbotron-fluid" id="top-jumpo">
-  <div class="container cover text-center">
-      
-    <h1 class="display-4"> - </h1>
-     
+<div class="jumbotron cover jumbotron-fluid" id="top-jumpo">
+  <div class="container text-center">
+      <h1 class="text-center welcome">Welcome!</h1>
+      <div class="row main-content">
+   <div class="col-md-2"></div>
+    <div class="col-md-8"><p>Here you will find all the information concerning the operation of our fitness
+and beauty club. Feel free to get in touch with us by phone or in person by visiting our gym. 
+        Try all our programms for free! </p> 
+        
+        
+        <?php    if(isset($_SESSION['customer_id'])){ ?>
+   <p> logged in !!   <?php echo $_SESSION['customer_id']; ?>   </p> <?php } ?>
+          <div class="button-main">
+                <a class="btn btn-primary btn-lg round color" href="#" role="button"> Learn More</a>
+        </div>
+
+          </div>
+          <div class="col-md-2"></div>
+      </div>
   </div>
 </div>
    
 <!-- Footer -->
 <footer class="page-footer top-menu color-footer">
-
-    <!-- Footer Links -->
-   
-
-    
-    <!-- Footer Links -->
-
-    <!-- Copyright -->
   
       
       <div class="container">
 				
 					
 						
-							<div class="row align-items-center">
-								<div class="col-md-6">
-                                 <div class="footer-details text-center">
-									<h1>.  </h1>
-                                    <p>  - </p>
-                                    </div>
-								</div>
-								<div class="col-md-3 ">
-                                    <div class="top-margin">
+							<div class="row">
+								<div class="col-md-4">
+                                 <div class="top-margin">
 									<div class="icon"> <i class="fas fa-mobile-alt"></i></div>
                                     <div class="loc">
 										
-										<p> . 22108853 <br> . 99097385</p>
+										<p> Tel. 24726444, 99481883 <br>Email: mspetsioti81@hotmail.com</p>
                                        
 									</div>
                                     </div>
 								</div>
-								<div class="col-md-3">
-                                    <div class="top-margin">
+								<div class="col-md-4 ">
+                                     <div class="top-margin">
                                    <div class="icon"> <i class="fas fa-map-marker-alt"></i></div>
                                     <div class="loc">
 										
-										<p> .  ' 64,<br>  2220, <br></p>
+										<p> Nikos Theophanous,<br> Xylophagou 7520, Larnaca</p>
 									</div>
                                         </div>
 								</div>
+								<div class="col-md-4">
+                                    <div class="top-margin-cstm text-center">
+                                   <p> Socialise with us!</p>
+                                       <a href="http://facebook.com">    <i class="fab fa-facebook"></i>        </a>                                
+                                    </div>
+								</div>
+                                
 							</div>
 						
 					

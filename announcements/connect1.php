@@ -2,7 +2,7 @@
 $servername = "localhost";
 $username = "root";
 $password = "";
-$database="database";
+$database="epl449";
 //$charset='utf8'; // specify the character set
 //$collation='utf8_general_ci'; //specify what collation you wish to use
 

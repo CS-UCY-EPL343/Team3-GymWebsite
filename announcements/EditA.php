@@ -1,7 +1,7 @@
 <?php
 session_start();
 include("connect1.php");
-include("auth.php");
+
 
 ?> 
 <html>
@@ -13,7 +13,7 @@ include("auth.php");
 <body>
     <div class="bar">
    <ul> 
-   <li><a class="b"  href="logout.php">Exit<br></a></li>
+   
    </ul>
 </div>
     

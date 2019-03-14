@@ -20,6 +20,15 @@ if (!empty($_POST['btnLogin'])) {
         if($customer_id > 0)
         {
             $_SESSION['customer_id'] = $customer_id; 
+            $user= $app->UserDetails($conn,$customer_id); 
+            $_SESSION['role'] = $user->role;
+            $_SESSION['surname']=$user->surname;
+            $_SESSION['name']= $user->name;
+            $_SESSION['email']= $user->email;
+            $_SESSION['telephone']= $user->telephone;
+            $_SESSION['username']= $user->username;
+            
+            $_SESSION['sex']= $user->sex;
             header("Location: welcome.php"); 
         }
         else
@@ -59,7 +68,7 @@ if (!empty($_POST['btnLogin'])) {
         </a>
     <ul class="navbar-nav navbar-light bg-light ml-auto">
       <li class="nav-item">
-        <a class="nav-link" href="../index.html"><i class="fas fa-home fa-fw"> </i>Home </a>
+        <a class="nav-link" href="index.html"><i class="fas fa-home fa-fw"> </i>Home </a>
       </li>
       <li class="nav-item">
           <a class="nav-link" href="../profile.html"> <i class="fas fa-user fa-fw"></i>Profile</a>
@@ -79,9 +88,6 @@ if (!empty($_POST['btnLogin'])) {
       </li>
          <li class="nav-item">
         <a class="nav-link" href="../announcements.html"><i class="fas fa-bullhorn fa-fw"></i>Announcements</a>
-      </li>
-         <li class="nav-item">
-        <a class="nav-link" href="login.php"><i class="fas fa-key fa-fw"></i>Login</a>
       </li>
     </ul>
     

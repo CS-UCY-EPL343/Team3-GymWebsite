@@ -23,7 +23,7 @@ public function Login($DBcon,$username, $password)
     }
  
     
- /*   public function UserDetails($DBcon , $customer_id)
+ public function UserDetails($DBcon , $customer_id)
     {
         try {
           
@@ -36,6 +36,6 @@ public function Login($DBcon,$username, $password)
         } catch (PDOException $e) {
             exit($e->getMessage());
         }
-    }*/
+    }
     
 }

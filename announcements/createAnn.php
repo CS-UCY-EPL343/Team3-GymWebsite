@@ -2,7 +2,7 @@
 session_start();
 
 include("connect1.php");
-include("auth.php");
+
 
 ?> 
 <html>
