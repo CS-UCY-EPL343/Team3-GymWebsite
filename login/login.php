@@ -1,7 +1,7 @@
 <?php
 
 session_start();
- 
+
 
 
 require_once 'logChecker.php';
@@ -23,8 +23,23 @@ if (!empty($_POST['btnLogin'])) {
         $customer_id = $app->Login($conn,$username, $password); 
         if($customer_id > 0)
         {
-            $_SESSION['customer_id'] = $customer_id; 
-            header("Location: welcome.php"); 
+           
+            $_SESSION['customer_id'] = $customer_id;
+           
+           $user= $app->UserDetails($conn,$customer_id); 
+            $_SESSION['role'] = $user->role;
+            $_SESSION['surname']=$user->surname;
+            $_SESSION['name']= $user->name;
+            $_SESSION['email']= $user->email;
+            $_SESSION['telephone']= $user->telephone;
+            $_SESSION['username']= $user->username;
+             $enc_password = hash('sha256', $password);
+            $_SESSION['password']=$enc_password;
+            
+            $_SESSION['sex']= $user->sex;
+            
+            
+            header("Location: profile.php"); 
         }
         else
         {

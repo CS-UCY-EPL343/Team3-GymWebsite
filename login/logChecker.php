@@ -23,11 +23,11 @@ public function Login($conn,$username, $password)
     }
  
     
- /*   public function UserDetails($conn , $customer_id)
+    public function UserDetails($conn , $customer_id)
     {
         try {
           
-            $query = $conn->prepare("SELECT customer_id, name, username, email FROM customers WHERE customer_id=:customer_id");
+            $query = $conn->prepare("SELECT customer_id, name, surname, email , role , surname FROM customers WHERE customer_id=:customer_id");
             $query->bindParam("customer_id", $customer_id, PDO::PARAM_STR);
             $query->execute();
             if ($query->rowCount() > 0) {
@@ -36,6 +36,6 @@ public function Login($conn,$username, $password)
         } catch (PDOException $e) {
             exit($e->getMessage());
         }
-    }*/
+    }
     
 }
