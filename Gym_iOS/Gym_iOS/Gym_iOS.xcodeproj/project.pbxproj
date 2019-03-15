@@ -7,19 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		790292E32238F7D700581F81 /* dumbbell.png in Resources */ = {isa = PBXBuildFile; fileRef = 790292E22238F7D700581F81 /* dumbbell.png */; };
+		790292E72238F85600581F81 /* 588a6686d06f6719692a2d1a.png in Resources */ = {isa = PBXBuildFile; fileRef = 790292E62238F85600581F81 /* 588a6686d06f6719692a2d1a.png */; };
+		790292E92238F87D00581F81 /* User_Account_Person_Avatar_Profile_Man-512 17-27-39-967.png in Resources */ = {isa = PBXBuildFile; fileRef = 790292E82238F87C00581F81 /* User_Account_Person_Avatar_Profile_Man-512 17-27-39-967.png */; };
 		79105A2F223806000058BCB4 /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79105A2E223806000058BCB4 /* ThirdViewController.swift */; };
 		79105A31223806260058BCB4 /* FourthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79105A30223806260058BCB4 /* FourthViewController.swift */; };
 		79105A33223806420058BCB4 /* FifthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79105A32223806420058BCB4 /* FifthViewController.swift */; };
 		79105A35223806530058BCB4 /* SixthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79105A34223806530058BCB4 /* SixthViewController.swift */; };
 		79105A372238065E0058BCB4 /* SeventhViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79105A362238065E0058BCB4 /* SeventhViewController.swift */; };
+		7921A28F223B386600489913 /* cache_clean.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7921A28E223B386600489913 /* cache_clean.swift */; };
 		79ACDAE52231837300557F68 /* 791858.png in Resources */ = {isa = PBXBuildFile; fileRef = 79ACDADD2231837200557F68 /* 791858.png */; };
 		79ACDAE62231837300557F68 /* plus-box-512.png in Resources */ = {isa = PBXBuildFile; fileRef = 79ACDADE2231837200557F68 /* plus-box-512.png */; };
 		79ACDAE72231837300557F68 /* shopping-01-512-2.png in Resources */ = {isa = PBXBuildFile; fileRef = 79ACDADF2231837200557F68 /* shopping-01-512-2.png */; };
-		79ACDAE82231837300557F68 /* User_Account_Person_Avatar_Profile_Man-512 17-27-39-967.png in Resources */ = {isa = PBXBuildFile; fileRef = 79ACDAE02231837200557F68 /* User_Account_Person_Avatar_Profile_Man-512 17-27-39-967.png */; };
 		79ACDAE92231837300557F68 /* 94349-200.png in Resources */ = {isa = PBXBuildFile; fileRef = 79ACDAE12231837200557F68 /* 94349-200.png */; };
-		79ACDAEA2231837300557F68 /* dumbbell.png in Resources */ = {isa = PBXBuildFile; fileRef = 79ACDAE22231837200557F68 /* dumbbell.png */; };
 		79ACDAEB2231837300557F68 /* 789377-200.png in Resources */ = {isa = PBXBuildFile; fileRef = 79ACDAE32231837300557F68 /* 789377-200.png */; };
-		79ACDAEC2231837300557F68 /* 588a6686d06f6719692a2d1a.png in Resources */ = {isa = PBXBuildFile; fileRef = 79ACDAE42231837300557F68 /* 588a6686d06f6719692a2d1a.png */; };
 		79D10BE5221C5D7F00C1387F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79D10BE4221C5D7F00C1387F /* AppDelegate.swift */; };
 		79D10BE7221C5D7F00C1387F /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79D10BE6221C5D7F00C1387F /* FirstViewController.swift */; };
 		79D10BE9221C5D7F00C1387F /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79D10BE8221C5D7F00C1387F /* SecondViewController.swift */; };
@@ -50,19 +51,20 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		790292E22238F7D700581F81 /* dumbbell.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = dumbbell.png; path = ../app_icons/final_crop/dumbbell.png; sourceTree = "<group>"; };
+		790292E62238F85600581F81 /* 588a6686d06f6719692a2d1a.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 588a6686d06f6719692a2d1a.png; path = ../app_icons/final_crop/588a6686d06f6719692a2d1a.png; sourceTree = "<group>"; };
+		790292E82238F87C00581F81 /* User_Account_Person_Avatar_Profile_Man-512 17-27-39-967.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "User_Account_Person_Avatar_Profile_Man-512 17-27-39-967.png"; path = "../app_icons/final_crop/User_Account_Person_Avatar_Profile_Man-512 17-27-39-967.png"; sourceTree = "<group>"; };
 		79105A2E223806000058BCB4 /* ThirdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdViewController.swift; sourceTree = "<group>"; };
 		79105A30223806260058BCB4 /* FourthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FourthViewController.swift; sourceTree = "<group>"; };
 		79105A32223806420058BCB4 /* FifthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FifthViewController.swift; sourceTree = "<group>"; };
 		79105A34223806530058BCB4 /* SixthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SixthViewController.swift; sourceTree = "<group>"; };
 		79105A362238065E0058BCB4 /* SeventhViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeventhViewController.swift; sourceTree = "<group>"; };
+		7921A28E223B386600489913 /* cache_clean.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cache_clean.swift; sourceTree = "<group>"; };
 		79ACDADD2231837200557F68 /* 791858.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 791858.png; path = ../app_icons/final_crop/791858.png; sourceTree = "<group>"; };
 		79ACDADE2231837200557F68 /* plus-box-512.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "plus-box-512.png"; path = "../app_icons/final_crop/plus-box-512.png"; sourceTree = "<group>"; };
 		79ACDADF2231837200557F68 /* shopping-01-512-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "shopping-01-512-2.png"; path = "../app_icons/final_crop/shopping-01-512-2.png"; sourceTree = "<group>"; };
-		79ACDAE02231837200557F68 /* User_Account_Person_Avatar_Profile_Man-512 17-27-39-967.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "User_Account_Person_Avatar_Profile_Man-512 17-27-39-967.png"; path = "../app_icons/final_crop/User_Account_Person_Avatar_Profile_Man-512 17-27-39-967.png"; sourceTree = "<group>"; };
 		79ACDAE12231837200557F68 /* 94349-200.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "94349-200.png"; path = "../app_icons/final_crop/94349-200.png"; sourceTree = "<group>"; };
-		79ACDAE22231837200557F68 /* dumbbell.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dumbbell.png; sourceTree = "<group>"; };
 		79ACDAE32231837300557F68 /* 789377-200.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "789377-200.png"; path = "../app_icons/final_crop/789377-200.png"; sourceTree = "<group>"; };
-		79ACDAE42231837300557F68 /* 588a6686d06f6719692a2d1a.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 588a6686d06f6719692a2d1a.png; path = ../app_icons/final_crop/588a6686d06f6719692a2d1a.png; sourceTree = "<group>"; };
 		79D10BE1221C5D7F00C1387F /* Gym_iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gym_iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		79D10BE4221C5D7F00C1387F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		79D10BE6221C5D7F00C1387F /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -79,6 +81,7 @@
 		79D10C08221C5D8000C1387F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		79F4043D223876AB000ED83C /* UI_Icons_2-06-512.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "UI_Icons_2-06-512.png"; path = "../app_icons/UI_Icons_2-06-512.png"; sourceTree = "<group>"; };
 		79F40441223877D7000ED83C /* EightViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EightViewController.swift; sourceTree = "<group>"; };
+		79FBF6B9223959BA00EBE9A1 /* Gym_iOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Gym_iOS.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,15 +116,15 @@
 				79D10BFA221C5D8000C1387F /* Gym_iOSTests */,
 				79D10C05221C5D8000C1387F /* Gym_iOSUITests */,
 				79D10BE2221C5D7F00C1387F /* Products */,
-				79ACDAE42231837300557F68 /* 588a6686d06f6719692a2d1a.png */,
 				79ACDAE12231837200557F68 /* 94349-200.png */,
 				79ACDAE32231837300557F68 /* 789377-200.png */,
 				79ACDADD2231837200557F68 /* 791858.png */,
-				79ACDAE22231837200557F68 /* dumbbell.png */,
 				79ACDADE2231837200557F68 /* plus-box-512.png */,
 				79ACDADF2231837200557F68 /* shopping-01-512-2.png */,
-				79ACDAE02231837200557F68 /* User_Account_Person_Avatar_Profile_Man-512 17-27-39-967.png */,
 				79F4043D223876AB000ED83C /* UI_Icons_2-06-512.png */,
+				790292E22238F7D700581F81 /* dumbbell.png */,
+				790292E62238F85600581F81 /* 588a6686d06f6719692a2d1a.png */,
+				790292E82238F87C00581F81 /* User_Account_Person_Avatar_Profile_Man-512 17-27-39-967.png */,
 			);
 			sourceTree = "<group>";
 		};
@@ -138,19 +141,21 @@
 		79D10BE3221C5D7F00C1387F /* Gym_iOS */ = {
 			isa = PBXGroup;
 			children = (
-				79F40441223877D7000ED83C /* EightViewController.swift */,
 				79D10BE4221C5D7F00C1387F /* AppDelegate.swift */,
+				79D10BEA221C5D7F00C1387F /* Main.storyboard */,
+				79D10BEF221C5D8000C1387F /* LaunchScreen.storyboard */,
+				79D10BED221C5D8000C1387F /* Assets.xcassets */,
+				79D10BF2221C5D8000C1387F /* Info.plist */,
 				79D10BE6221C5D7F00C1387F /* FirstViewController.swift */,
 				79D10BE8221C5D7F00C1387F /* SecondViewController.swift */,
-				79D10BEA221C5D7F00C1387F /* Main.storyboard */,
-				79D10BED221C5D8000C1387F /* Assets.xcassets */,
-				79D10BEF221C5D8000C1387F /* LaunchScreen.storyboard */,
-				79D10BF2221C5D8000C1387F /* Info.plist */,
 				79105A2E223806000058BCB4 /* ThirdViewController.swift */,
 				79105A30223806260058BCB4 /* FourthViewController.swift */,
 				79105A32223806420058BCB4 /* FifthViewController.swift */,
 				79105A34223806530058BCB4 /* SixthViewController.swift */,
 				79105A362238065E0058BCB4 /* SeventhViewController.swift */,
+				79F40441223877D7000ED83C /* EightViewController.swift */,
+				79FBF6B9223959BA00EBE9A1 /* Gym_iOS.entitlements */,
+				7921A28E223B386600489913 /* cache_clean.swift */,
 			);
 			path = Gym_iOS;
 			sourceTree = "<group>";
@@ -241,6 +246,11 @@
 				TargetAttributes = {
 					79D10BE0221C5D7F00C1387F = {
 						CreatedOnToolsVersion = 10.1;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 0;
+							};
+						};
 					};
 					79D10BF6221C5D8000C1387F = {
 						CreatedOnToolsVersion = 10.1;
@@ -278,17 +288,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				79D10BF1221C5D8000C1387F /* LaunchScreen.storyboard in Resources */,
-				79ACDAE82231837300557F68 /* User_Account_Person_Avatar_Profile_Man-512 17-27-39-967.png in Resources */,
 				79D10BEE221C5D8000C1387F /* Assets.xcassets in Resources */,
-				79ACDAEA2231837300557F68 /* dumbbell.png in Resources */,
 				79ACDAE72231837300557F68 /* shopping-01-512-2.png in Resources */,
 				79ACDAEB2231837300557F68 /* 789377-200.png in Resources */,
 				79F4043E223876AB000ED83C /* UI_Icons_2-06-512.png in Resources */,
+				790292E32238F7D700581F81 /* dumbbell.png in Resources */,
 				79ACDAE92231837300557F68 /* 94349-200.png in Resources */,
+				790292E72238F85600581F81 /* 588a6686d06f6719692a2d1a.png in Resources */,
 				79D10BEC221C5D7F00C1387F /* Main.storyboard in Resources */,
 				79ACDAE52231837300557F68 /* 791858.png in Resources */,
-				79ACDAEC2231837300557F68 /* 588a6686d06f6719692a2d1a.png in Resources */,
 				79ACDAE62231837300557F68 /* plus-box-512.png in Resources */,
+				790292E92238F87D00581F81 /* User_Account_Person_Avatar_Profile_Man-512 17-27-39-967.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -317,6 +327,7 @@
 				79105A33223806420058BCB4 /* FifthViewController.swift in Sources */,
 				79105A35223806530058BCB4 /* SixthViewController.swift in Sources */,
 				79105A372238065E0058BCB4 /* SeventhViewController.swift in Sources */,
+				7921A28F223B386600489913 /* cache_clean.swift in Sources */,
 				79D10BE9221C5D7F00C1387F /* SecondViewController.swift in Sources */,
 				79D10BE5221C5D7F00C1387F /* AppDelegate.swift in Sources */,
 				79105A2F223806000058BCB4 /* ThirdViewController.swift in Sources */,
@@ -496,6 +507,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8RPNVAN6BG;
 				INFOPLIST_FILE = Gym_iOS/Info.plist;
@@ -503,8 +515,9 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "cloukaides.Gym-iOS";
+				PRODUCT_BUNDLE_IDENTIFIER = "chrisloukaides-MSFitCAREGym";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -514,6 +527,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8RPNVAN6BG;
 				INFOPLIST_FILE = Gym_iOS/Info.plist;
@@ -521,8 +535,9 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "cloukaides.Gym-iOS";
+				PRODUCT_BUNDLE_IDENTIFIER = "chrisloukaides-MSFitCAREGym";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

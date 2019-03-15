@@ -45,7 +45,7 @@
             </objects>
             <point key="canvasLocation" x="749.60000000000002" y="-320.68965517241384"/>
         </scene>
-        <!--Login-->
+        <!--Login -->
         <scene sceneID="E6h-Tp-ZOc">
             <objects>
                 <viewController id="bwB-8q-Q3S" customClass="EightViewController" customModule="Gym_iOS" customModuleProvider="target" sceneMemberID="viewController">
@@ -71,7 +71,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="MnC-2u-Dwv"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Login" image="UI_Icons_2-06-512.png" id="VDX-g2-ytS"/>
+                    <tabBarItem key="tabBarItem" title="Login " image="UI_Icons_2-06-512.png" id="VDX-g2-ytS"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="webview" destination="FJe-gg-etR" id="c2g-Zj-OKP"/>
@@ -302,7 +302,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
             <objects>
-                <tabBarController id="49e-Tb-3d3" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="TabController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="49e-Tb-3d3" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" id="W28-zg-YXA">
                         <rect key="frame" x="0.0" y="975" width="768" height="49"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
@@ -325,13 +325,13 @@
         </scene>
     </scenes>
     <resources>
-        <image name="588a6686d06f6719692a2d1a.png" width="45" height="45"/>
+        <image name="588a6686d06f6719692a2d1a.png" width="44" height="44"/>
         <image name="789377-200.png" width="31" height="31"/>
         <image name="791858.png" width="31" height="31"/>
         <image name="94349-200.png" width="42" height="42"/>
         <image name="UI_Icons_2-06-512.png" width="50" height="50"/>
-        <image name="User_Account_Person_Avatar_Profile_Man-512 17-27-39-967.png" width="38" height="38"/>
-        <image name="dumbbell.png" width="40" height="40"/>
+        <image name="User_Account_Person_Avatar_Profile_Man-512 17-27-39-967.png" width="37" height="37"/>
+        <image name="dumbbell.png" width="38" height="38"/>
         <image name="shopping-01-512-2.png" width="40" height="40"/>
     </resources>
 </document>

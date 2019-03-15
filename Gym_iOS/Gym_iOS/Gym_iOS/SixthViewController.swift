@@ -18,14 +18,14 @@ class SixthViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        webview.configuration.preferences.javaScriptEnabled=true
+        webview.configuration.websiteDataStore=WKWebsiteDataStore.default()
         
         let url="http://cproject.in.cs.ucy.ac.cy/gym/shop/prices.php"
         let request=URLRequest(url: URL(string: url)!)
         
         self.webview.load(request)
         
-        // Do any additional setup after loading the view, typically from a nib.
     }
-    
     
 }

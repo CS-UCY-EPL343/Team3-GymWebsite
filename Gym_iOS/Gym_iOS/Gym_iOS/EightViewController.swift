@@ -13,20 +13,19 @@ import WebKit
 class EightViewController: UIViewController {
     
     
-    
     @IBOutlet weak var webview: WKWebView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        webview.configuration.preferences.javaScriptEnabled=true
+        webview.configuration.websiteDataStore=WKWebsiteDataStore.default()
         
-        let url="http://cproject.in.cs.ucy.ac.cy/gym/registration/login.php"
+        let url="http://cproject.in.cs.ucy.ac.cy/gym/index.php"
         let request=URLRequest(url: URL(string: url)!)
         
         self.webview.load(request)
         
-        // Do any additional setup after loading the view, typically from a nib.
     }
-    
     
 }
