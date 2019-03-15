@@ -175,7 +175,7 @@ public class MainActivity extends AppCompatActivity
 
             myWebView.clearCache(true);
             myWebView.getSettings().setJavaScriptEnabled(true);
-            myWebView.loadUrl("http://cproject.in.cs.ucy.ac.cy/gym/shop/services.php");
+            myWebView.loadUrl("http://cproject.in.cs.ucy.ac.cy/gym/services/services.php");
             //myWebView.loadUrl("https://www.google.com");
 
             myWebView.setWebViewClient(new WebViewClient() {
@@ -213,7 +213,7 @@ public class MainActivity extends AppCompatActivity
 
             myWebView.clearCache(true);
             myWebView.getSettings().setJavaScriptEnabled(true);
-            myWebView.loadUrl("http://cproject.in.cs.ucy.ac.cy/gym/shop/prices.php");
+            myWebView.loadUrl("http://cproject.in.cs.ucy.ac.cy/gym/prices/prices.php");
             //myWebView.loadUrl("https://www.google.com");
 
             myWebView.setWebViewClient(new WebViewClient() {
@@ -232,7 +232,7 @@ public class MainActivity extends AppCompatActivity
 
             myWebView.clearCache(true);
             myWebView.getSettings().setJavaScriptEnabled(true);
-            myWebView.loadUrl("http://cproject.in.cs.ucy.ac.cy/gym/shop/announcements.php");
+            myWebView.loadUrl("http://cproject.in.cs.ucy.ac.cy/gym/announcements/announcement.php");
             //myWebView.loadUrl("https://www.google.com");
 
             myWebView.setWebViewClient(new WebViewClient() {

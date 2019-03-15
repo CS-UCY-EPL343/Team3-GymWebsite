@@ -21,7 +21,7 @@ class EightViewController: UIViewController {
         webview.configuration.preferences.javaScriptEnabled=true
         webview.configuration.websiteDataStore=WKWebsiteDataStore.default()
         
-        let url="http://cproject.in.cs.ucy.ac.cy/gym/index.php"
+        let url="http://cproject.in.cs.ucy.ac.cy/gym/registration/login.php"
         let request=URLRequest(url: URL(string: url)!)
         
         self.webview.load(request)

@@ -21,7 +21,7 @@ class SixthViewController: UIViewController {
         webview.configuration.preferences.javaScriptEnabled=true
         webview.configuration.websiteDataStore=WKWebsiteDataStore.default()
         
-        let url="http://cproject.in.cs.ucy.ac.cy/gym/shop/prices.php"
+        let url="http://cproject.in.cs.ucy.ac.cy/gym/prices/prices.php"
         let request=URLRequest(url: URL(string: url)!)
         
         self.webview.load(request)
