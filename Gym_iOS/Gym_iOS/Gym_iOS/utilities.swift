@@ -1,5 +1,5 @@
 //
-//  cache_clean.swift
+//  utilities.swift
 //  Gym_iOS
 //
 //  Created by Chris Loukaides on 15/03/2019.
@@ -18,3 +18,14 @@ func clearBrowsingData() {
         records.forEach { record in
             WKWebsiteDataStore.default().removeData(ofTypes: record.dataTypes, for: [record], completionHandler: {})
             print("[WebCacheCleaner] Record \(record) deleted")    }   }   }
+
+
+
+class GlobalPool{
+
+struct processPool {
+    static var pool=WKProcessPool()
+    static var webdata=WKWebsiteDataStore.default()
+    }
+}
+

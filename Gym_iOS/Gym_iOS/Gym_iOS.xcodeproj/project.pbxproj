@@ -15,7 +15,7 @@
 		79105A33223806420058BCB4 /* FifthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79105A32223806420058BCB4 /* FifthViewController.swift */; };
 		79105A35223806530058BCB4 /* SixthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79105A34223806530058BCB4 /* SixthViewController.swift */; };
 		79105A372238065E0058BCB4 /* SeventhViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79105A362238065E0058BCB4 /* SeventhViewController.swift */; };
-		7921A28F223B386600489913 /* cache_clean.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7921A28E223B386600489913 /* cache_clean.swift */; };
+		7921A28F223B386600489913 /* utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7921A28E223B386600489913 /* utilities.swift */; };
 		79ACDAE52231837300557F68 /* 791858.png in Resources */ = {isa = PBXBuildFile; fileRef = 79ACDADD2231837200557F68 /* 791858.png */; };
 		79ACDAE62231837300557F68 /* plus-box-512.png in Resources */ = {isa = PBXBuildFile; fileRef = 79ACDADE2231837200557F68 /* plus-box-512.png */; };
 		79ACDAE72231837300557F68 /* shopping-01-512-2.png in Resources */ = {isa = PBXBuildFile; fileRef = 79ACDADF2231837200557F68 /* shopping-01-512-2.png */; };
@@ -59,7 +59,7 @@
 		79105A32223806420058BCB4 /* FifthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FifthViewController.swift; sourceTree = "<group>"; };
 		79105A34223806530058BCB4 /* SixthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SixthViewController.swift; sourceTree = "<group>"; };
 		79105A362238065E0058BCB4 /* SeventhViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeventhViewController.swift; sourceTree = "<group>"; };
-		7921A28E223B386600489913 /* cache_clean.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cache_clean.swift; sourceTree = "<group>"; };
+		7921A28E223B386600489913 /* utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = utilities.swift; sourceTree = "<group>"; };
 		79ACDADD2231837200557F68 /* 791858.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 791858.png; path = ../app_icons/final_crop/791858.png; sourceTree = "<group>"; };
 		79ACDADE2231837200557F68 /* plus-box-512.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "plus-box-512.png"; path = "../app_icons/final_crop/plus-box-512.png"; sourceTree = "<group>"; };
 		79ACDADF2231837200557F68 /* shopping-01-512-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "shopping-01-512-2.png"; path = "../app_icons/final_crop/shopping-01-512-2.png"; sourceTree = "<group>"; };
@@ -155,7 +155,7 @@
 				79105A362238065E0058BCB4 /* SeventhViewController.swift */,
 				79F40441223877D7000ED83C /* EightViewController.swift */,
 				79FBF6B9223959BA00EBE9A1 /* Gym_iOS.entitlements */,
-				7921A28E223B386600489913 /* cache_clean.swift */,
+				7921A28E223B386600489913 /* utilities.swift */,
 			);
 			path = Gym_iOS;
 			sourceTree = "<group>";
@@ -327,7 +327,7 @@
 				79105A33223806420058BCB4 /* FifthViewController.swift in Sources */,
 				79105A35223806530058BCB4 /* SixthViewController.swift in Sources */,
 				79105A372238065E0058BCB4 /* SeventhViewController.swift in Sources */,
-				7921A28F223B386600489913 /* cache_clean.swift in Sources */,
+				7921A28F223B386600489913 /* utilities.swift in Sources */,
 				79D10BE9221C5D7F00C1387F /* SecondViewController.swift in Sources */,
 				79D10BE5221C5D7F00C1387F /* AppDelegate.swift in Sources */,
 				79105A2F223806000058BCB4 /* ThirdViewController.swift in Sources */,
