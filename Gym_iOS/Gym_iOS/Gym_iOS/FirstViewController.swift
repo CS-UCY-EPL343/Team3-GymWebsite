@@ -15,9 +15,12 @@ class FirstViewController: UIViewController {
     
     @IBOutlet weak var webview: WKWebView!
     
+    var flag=0;
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        if (flag==0){
         clearBrowsingData();
         webview.configuration.preferences.javaScriptEnabled=true
         webview.configuration.websiteDataStore=WKWebsiteDataStore.default()
@@ -25,8 +28,9 @@ class FirstViewController: UIViewController {
         let url="http://cproject.in.cs.ucy.ac.cy/gym/index.php"
         let request=URLRequest(url: URL(string: url)!)
         
-        self.webview.load(request)
-
+        self.webview.load(request) }
+        
+        if(flag==0){flag=1}
     }
     
 }

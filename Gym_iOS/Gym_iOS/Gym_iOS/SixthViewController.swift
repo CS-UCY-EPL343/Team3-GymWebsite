@@ -15,17 +15,21 @@ class SixthViewController: UIViewController {
     
     @IBOutlet weak var webview: WKWebView!
 
+    var flag=0;
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        if (flag==0){
         webview.configuration.preferences.javaScriptEnabled=true
         webview.configuration.websiteDataStore=WKWebsiteDataStore.default()
         
         let url="http://cproject.in.cs.ucy.ac.cy/gym/prices/prices.php"
         let request=URLRequest(url: URL(string: url)!)
         
-        self.webview.load(request)
+        self.webview.load(request) }
         
+        if(flag==0){flag=1}
     }
     
 }
