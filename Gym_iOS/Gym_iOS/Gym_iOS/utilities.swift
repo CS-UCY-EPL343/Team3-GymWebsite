@@ -29,3 +29,10 @@ struct processPool {
     }
 }
 
+
+func setStatusBarBackgroundColor() {
+    
+    guard let statusBar = UIApplication.shared.value(forKeyPath: "statusBarWindow.statusBar") as? UIView else { return }
+    
+    statusBar.backgroundColor = UIColor.black
+}

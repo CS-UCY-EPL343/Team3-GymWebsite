@@ -76,11 +76,14 @@ public class MainActivity extends AppCompatActivity
     @Override
     public void onBackPressed() {
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        if (drawer.isDrawerOpen(GravityCompat.START)) {
+        WebView myWebView = (WebView) findViewById(R.id.webview);
+
+        if (drawer.isDrawerOpen(GravityCompat.START))
             drawer.closeDrawer(GravityCompat.START);
-        } else {
+            else if (myWebView.copyBackForwardList().getCurrentIndex() > 0)
+            myWebView.goBack();
+            else
             super.onBackPressed();
-        }
     }
 
     @Override

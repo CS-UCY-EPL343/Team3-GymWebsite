@@ -13,7 +13,7 @@ class SixthViewController: UIViewController {
     
     
     @IBOutlet var webview: WKWebView!
-
+    
     var flag=0;
     
     override func viewDidLoad() {
@@ -28,6 +28,8 @@ class SixthViewController: UIViewController {
             configuration.websiteDataStore=GlobalPool.processPool.webdata
             
             self.webview = WKWebView(frame: view.bounds, configuration: configuration)
+            self.webview!.autoresizingMask = UIView.AutoresizingMask(rawValue: UIView.AutoresizingMask.flexibleWidth.rawValue | UIView.AutoresizingMask.flexibleHeight.rawValue)
+            webview.allowsBackForwardNavigationGestures = true
             self.view.addSubview(self.webview!)
         
             let url="http://cproject.in.cs.ucy.ac.cy/gym/prices/prices.php"

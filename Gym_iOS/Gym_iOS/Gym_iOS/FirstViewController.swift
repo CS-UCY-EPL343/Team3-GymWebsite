@@ -22,7 +22,7 @@ class FirstViewController: UIViewController {
         
         if (flag==0){
         
-            clearBrowsingData();
+            clearBrowsingData()
         
             let configuration = WKWebViewConfiguration()
             configuration.preferences.javaScriptEnabled=true
@@ -30,6 +30,8 @@ class FirstViewController: UIViewController {
             configuration.websiteDataStore=GlobalPool.processPool.webdata
             
             self.webview = WKWebView(frame: view.bounds, configuration: configuration)
+            self.webview!.autoresizingMask = UIView.AutoresizingMask(rawValue: UIView.AutoresizingMask.flexibleWidth.rawValue | UIView.AutoresizingMask.flexibleHeight.rawValue)
+            webview.allowsBackForwardNavigationGestures = true
             self.view.addSubview(self.webview!)
 
             let url="http://cproject.in.cs.ucy.ac.cy/gym/index.php"

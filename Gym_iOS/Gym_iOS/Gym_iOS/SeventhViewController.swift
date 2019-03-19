@@ -28,6 +28,8 @@ class SeventhViewController: UIViewController {
             configuration.websiteDataStore=GlobalPool.processPool.webdata
             
             self.webview = WKWebView(frame: view.bounds, configuration: configuration)
+            self.webview!.autoresizingMask = UIView.AutoresizingMask(rawValue: UIView.AutoresizingMask.flexibleWidth.rawValue | UIView.AutoresizingMask.flexibleHeight.rawValue)
+            webview.allowsBackForwardNavigationGestures = true
             self.view.addSubview(self.webview!)
    
             let url="http://cproject.in.cs.ucy.ac.cy/gym/announcements/announcement.php"
