@@ -32,7 +32,7 @@ class ThirdViewController: UIViewController {
             webview.allowsBackForwardNavigationGestures = true
             self.view.addSubview(self.webview!)
         
-            let url="http://cproject.in.cs.ucy.ac.cy/gym/programs/programs.php"
+            let url="http://cproject.in.cs.ucy.ac.cy/gym/programs/program.php"
             let request=URLRequest(url: URL(string: url)!)
             self.webview.load(request) }
     

@@ -246,6 +246,7 @@
 				TargetAttributes = {
 					79D10BE0221C5D7F00C1387F = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1020;
 						SystemCapabilities = {
 							com.apple.Keychain = {
 								enabled = 0;
@@ -254,10 +255,12 @@
 					};
 					79D10BF6221C5D8000C1387F = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1020;
 						TestTargetID = 79D10BE0221C5D7F00C1387F;
 					};
 					79D10C01221C5D8000C1387F = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1020;
 						TestTargetID = 79D10BE0221C5D7F00C1387F;
 					};
 				};
@@ -511,6 +514,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8RPNVAN6BG;
 				INFOPLIST_FILE = Gym_iOS/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -518,7 +522,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "chrisloukaides-MSFitCAREGym";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -531,6 +535,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8RPNVAN6BG;
 				INFOPLIST_FILE = Gym_iOS/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -538,7 +543,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "chrisloukaides-MSFitCAREGym";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -557,7 +562,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "cloukaides.Gym-iOSTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Gym_iOS.app/Gym_iOS";
 			};
@@ -577,7 +582,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "cloukaides.Gym-iOSTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Gym_iOS.app/Gym_iOS";
 			};
@@ -596,7 +601,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "cloukaides.Gym-iOSUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = Gym_iOS;
 			};
@@ -615,7 +620,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "cloukaides.Gym-iOSUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = Gym_iOS;
 			};
