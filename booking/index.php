@@ -1,156 +1,72 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<?php 
+session_start();
+include("../announcements/GeneralAuth.php");
+?> 
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
-<!--<style>
-html *
-{
-   font-family: Arial !important;
-}
-table.calendar {
-	border-left: 1px solid #999;
-}
-tr.calendar-row {
-}
-td.calendar-day {
-	min-height: 80px;
-	font-size: 11px;
-	position: relative;
-	vertical-align: top;
-}
-* html div.calendar-day {
-	height: 80px;
-}
-td.calendar-day:hover {
-	background: #eceff5;
-}
-td.calendar-day-np {
-	background: #eee;
-	min-height: 80px;
-}
-* html div.calendar-day-np {
-	height: 80px;
-}
-td.calendar-day-head {
-	background: #ccc;
-	font-weight: bold;
-	text-align: center;
-	width: 120px;
-	padding: 5px;
-	border-bottom: 1px solid #999;
-	border-top: 1px solid #999;
-	border-right: 1px solid #999;
-}
-div.day-number {
-	background: #999;
-	padding: 5px;
-	color: #fff;
-	font-weight: bold;
-	float: right;
-	margin: -5px -5px 0 0;
-	width: 20px;
-	text-align: center;
-}
-td.calendar-day, td.calendar-day-np {
-	width: 120px;
-	padding: 5px;
-	border-bottom: 1px solid #999;
-	border-right: 1px solid #999;
-}
-</style>-->
-<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
-<title>Booking calendar</title>
-<link href="jquery-ui.css" rel="stylesheet">
-<!--<script src="jquery-1.10.2.js"></script>
-<!--<script src="jquery-ui.js"></script>-->
-<!--<script src="lang/datepicker-fi.js"></script>-->
+
+ <title>MS Fit Care Gym | Book Services</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+  <link rel="stylesheet" href="../css/style.css">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <script>
+  var holidays= [[1,1],[6,1], [25,3], [1,4], [1,5], [15,8], [1,10], [28,10], [25,12], [26,12]];
+    
+function DisableSpecificDates(date) {
+ 
+ 
+ for (var j = 0; j < holidays.length; j++) {
+    var m= holidays[j][1]-1;
+    var d=holidays[j][0];
+   
+    var dd=date.getDate();
+     var mm = date.getMonth();
+ //disable sundays
+    var day = date.getDay();
+    if ((day == 0)){
+        return [false];}
+  else if((d == dd)&&(m==mm)){
+     
+       return [false];
+    }
+ } return [true];    
+}
+    
+ 
+ 
+ 
     $(function() {
-	<!--$.datepicker.setDefaults($.datepicker.regional['fi']);-->
+	var dateToday = new Date(); 
     $( "#from" ).datepicker({
-      defaultDate: "+1w",
+    
+    defaultDate: "+1w",
       changeMonth: true,
-      numberOfMonths: 3,
+      numberOfMonths: 1,
+        minDate: dateToday,
       onClose: function( selectedDate ) {
-        $( "#to" ).datepicker( "option", "minDate", selectedDate );
-      }
+      },beforeShowDay: DisableSpecificDates
     });
-    $( "#to" ).datepicker({
-      defaultDate: "+1w",
-	  regional: "fi",
-      changeMonth: true,
-      numberOfMonths: 3,
-      onClose: function( selectedDate ) {
-        $( "#from" ).datepicker( "option", "maxDate", selectedDate );
-      }
-    });
-  });  </script>
+  });
+   
+    
+    </script>
+    
+    
 </head>
 
 <body>
-
-<h1>Booking calendar</h1>
-<table >
-    <!--border="1" cellpadding="5" width="800"-->
-	<tr>
-		<td valign="top">
-		<form action="book.php" method="post">
-			<h3>Make booking</h3>
-			<p><input checked="checked" name="service" type="radio" value="Physiotherapy" />Physiotherapy 
-			| <input name="service" type="radio" value="Jaccuzi" />Jaccuzi
-			| <input name="service" type="radio" value="Sauna" />Sauna | 
-			<input name="service" type="radio" value="Massage" />Massage</p>
-			<table style="width: 70%">
-				
-				<tr>
-					<td>Reservation date:</td>
-					<td>
-			<input id="from" name="day" required="" type="text" /></td>
-                   
-					
-				</tr>
-				<tr>
-                     <td>Reservation time:</td>
-					<td>&nbsp;</td>
-                   
-					<td> <select name="time">
-			<option selected="selected">09:00-10:00</option>
-			<option>10:00-11:00</option>
-			<option>11:00-12:00</option>
-			<option>12:00-13:00</option>
-			<option>13:00-14:00</option>
-			<option>14:00-15:00</option>
-			<option>15:00-16:00</option>
-			<option>16:00-17:00</option>
-			<option>17:00-18:00</option>
-			<option>18:00-19:00</option>
-			<option>19:00-20:00</option>
-			<option>20:00-21:00</option>
-			
-			</select>
-			</td>
-				</tr>
-			</table>
-			
-			<input name="book" type="submit" value="Book" />
-		</form>
-		</td>
-		<td valign="top">
-		<h3>Cancel booking</h3>
-		<form action="cancel.php" method="post">
-			<p></p>
-			ID: <input name="id" required="" type="text" /><br />
-			<br>
-			<p><input name="cancel" type="submit" value="Cancel" /></p>
-		</form>
-		</td>
-	</tr>
-</table>
-<?php
-/* draws a calendar */
-function draw_calendar($month,$year){
-
-	include 'config.php';
+    <?php
+    include 'config.php';
 
 	// Create connection
 	$conn = mysqli_connect($servername, $username, $password,  $dbname);
@@ -159,105 +75,729 @@ function draw_calendar($month,$year){
 	if (!$conn) {
     	die("Connection failed: " . mysqli_connect_error());
 	}
+    
+  $day=0;
+    $service=0;
+    $username=0;
+    $time=0;  
+   
 
-	/* draw table */
-	$calendar = '<table cellpadding="0" cellspacing="0" class="calendar">';
+   ?>
+    <?php if (!($_SERVER['HTTP_X_REQUESTED_WITH'] == "com.example.gym")) { ?> 
+<nav class="navbar navbar-expand-lg navbar-light bg-custom">
+ 
+  <button class="navbar-toggler navbar-light" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
 
-	/* table headings */
-	$calendar.= '<tr class="calendar-row"><td class="calendar-day-head">'.implode('</td><td class="calendar-day-head">',$headings).'</td></tr>';
+        
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <a class="navbar-brand ml-auto mx-auto" href="#">
+          <img src="../img/logo-test.png" alt="" width="70" height="90">
+        </a>
+     <ul class="navbar-nav navbar-light bg-light ml-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="../index.php"><i class="fas fa-home fa-fw"> </i>Home </a>
+      </li>
+      <li class="nav-item">
+          <a class="nav-link" href="../profile/profile.php"> <i class="fas fa-user fa-fw"></i>Profile</a>
+      </li>
+     <li class="nav-item">
+        <a class="nav-link" href="../programs.html"><i class="fas fa-dumbbell fa-fw"></i>Programs</a>
+      </li>
+    
+          <li class="nav-item">
+        <a class="nav-link" href="../services/services.php"><i class="fas fa-calendar-check fa-fw"></i>Services</a>
+      </li>
+         <li class="nav-item">
+        <a class="nav-link" href="../shop/shop.php"><i class="fas fa-shopping-cart fa-fw"></i>Shop</a>
+      </li>
+         <li class="nav-item">
+        <a class="nav-link" href="../prices/prices.php"><i class="fas fa-dollar-sign fa-fw"></i>Prices</a>
+      </li>
+         <li class="nav-item">
+        <a class="nav-link" href="../announcements/announcement.php"><i class="fas fa-bullhorn fa-fw"></i>Announcements</a>
+      </li>
+          <li class="nav-item">
+             <?php if(!isset($_SESSION['customer_id'])){ ?>
+        <a class="nav-link" href="../registration/login.php"><i class="fas fa-key fa-fw"></i>Login</a>
+            <?php } else { ?>
+        <a class="nav-link btn-danger round" id="logout" href="../registration/logout.php"><i class="fas fa-key fa-fw"></i>Logout</a> 
+             <?php } ?>
+      </li>
+    </ul>
+    
+  </div>
+</nav>
+<?php } ?>
+    
 
-	/* days and weeks vars now ... */
-	$running_day = date('w',mktime(0,0,0,$month,1,$year));
-	$days_in_month = date('t',mktime(0,0,0,$month,1,$year));
-	$days_in_this_week = 1;
-	$day_counter = 0;
-	$dates_array = array();
 
-	/* row for week one */
-	$calendar.= '<tr class="calendar-row">';
+   <div class="jumbotron book-cover jumbotron-fluid" id="top-jumpo">
+       <div class="container text-center">
+            <h1 class="text-center welcome">Book Service</h1>
+            <div class="row main-content">
+		
+            
+     
+  
+    <div class="col-sm-10 col-md-8 col-lg-6">
+        <div class="card card-signin">
+        <div class="card-body book-content">
+                 <?php  if (isset($_SESSION['error'])) {
+                    $error = $_SESSION['error'];
+                    echo '<div class="alert alert-danger">' .$error. '</div>';
+                   unset($_SESSION['error']);
+    } ?>
+        
+            <form action="index.php" method="post">
+            
+                <div class="form-group service-label">
+            <label>Choose Service</label>
+                    <?php 
+                $sqls = "SELECT * FROM $servicestb ";
+                       $ress = mysqli_query($conn, $sqls);
+                
+                ?>
+  <select class="form-control" id="choose-service" name="service">
+    
+ 
 
-	/* print "blank" days until the first of the current week */
-	for($x = 0; $x < $running_day; $x++):
-		$calendar.= '<td class="calendar-day-np"> </td>';
-		$days_in_this_week++;
-	endfor;
-
-	/* keep going with days.... */
-	for($list_day = 1; $list_day <= $days_in_month; $list_day++):
-		$calendar.= '<td class="calendar-day">';
-			/* add in the day number */
-			$calendar.= '<div class="day-number">'.$list_day.'</div>';
-
-			/** QUERY THE DATABASE FOR AN ENTRY FOR THIS DAY !!  IF MATCHES FOUND, PRINT THEM !! **/
-			$calendar.= str_repeat('<p> </p>',2);
-			$current_epoch = mktime(0,0,0,$month,$list_day,$year);
+			 
+           
+                   
+                    <?php
+                     
+                        
+                while (  $rows = mysqli_fetch_assoc($ress) ) {
+                       ?>
+                        <option type="radio" value="<?php echo $rows['title']?>" ><?php echo $rows['title'];
+                    } 
+                                
+                ?></option>
+                    </select>
+                </div>
+		
+                
+                
+             
+               
+				
+				 <div class="form-group service-label">
+                      <label>Choose Date</label>
+                <div class='input-group date' id='datetimepicker1'>
+                     <span class="input-group-addon">
+                        <span class="fa fa-calendar"></span>
+                    </span>
+                    <input type='text' id="from" class="form-control" name="day" />
+                   
+                </div>
+            </div>
+		
+             
+             <input type="submit" class="btn btn-lg btn-primary btn-block round " name="avalable" type="submit" value="Check Availability"/>
+         
+				</form>	
+           
+                 
+					
+    <?php       
+        
+    $day =  intval(strtotime(htmlspecialchars($_POST["day"])));
+    $service = htmlspecialchars($_POST["service"]);
+    
+  
+    if(isset($_POST["avalable"])) {
+       
+        $sql3 = "SELECT * FROM $servicestb where title='$service' ";
+       
+        $count2 = mysqli_query($conn, $sql3);
+        $row3=mysqli_fetch_array($count2);
+        
+       
+        ?>
+    
+   
+        <form action="index.php" method="post">
+            <?php   $_POST["day"]=$day;
+        $_POST["service"]=$service;
+       
+        $_SESSION["day"]=$day;
+        $_SESSION["service"]=$service;
+        
+        
+        
+        ?>
+            <div class="form-group service-label py-3">
+                <label> Reservation Time</label>
+                 <select class="form-control" id="choose-service" name="time">
+          
+        <?php  
+         
+        
+        $sql2 = "SELECT COUNT(*) from $booktb WHERE service='$service' and canceled=0  and time='09:00-10:00' and day='$day' ";
+        $count = mysqli_query($conn, $sql2);
+        $row2 = mysqli_fetch_array($count); 
+        
+        if (!($row2[0]>=$row3['capacity'])){ ?>
+                  
+			<option selected="selected">09:00-10:00</option> <?php } ?> 
+                     
+        <?php        
+        $sql2 = "SELECT COUNT(*) from $booktb WHERE service='$service' and canceled=0  and time='10:00-11:00' and day='$day' ";
+        $count = mysqli_query($conn, $sql2);
+        $row2 = mysqli_fetch_array($count); 
+        
+        if (!($row2[0]>=$row3['capacity'])){ ?>          
+            
+            <option>10:00-11:00</option> <?php } ?> 
+                   
+        <?php        
+        $sql2 = "SELECT COUNT(*) from $booktb WHERE service='$service' and canceled=0  and time='11:00-12:00' and day='$day' ";
+        $count = mysqli_query($conn, $sql2);
+        $row2 = mysqli_fetch_array($count); 
+        
+        if (!($row2[0]>=$row3['capacity'])){ ?> 
+                     
+			<option>11:00-12:00</option> <?php } ?>
+                     
+        <?php        
+        $sql2 = "SELECT COUNT(*) from $booktb WHERE service='$service' and canceled=0  and time='12:00-13:00' and day='$day' ";
+        $count = mysqli_query($conn, $sql2);
+        $row2 = mysqli_fetch_array($count); 
+        
+        if (!($row2[0]>=$row3['capacity'])){ ?> 
 			
-			$sql = "SELECT * FROM $booktb WHERE $current_epoch = day";
-						
-			$result = mysqli_query($conn, $sql);
-    		
-    		if (mysqli_num_rows($result) > 0) {
-    			// output data of each row
-    			while($row = mysqli_fetch_assoc($result)) {
-					if($row["canceled"] == 1) $calendar .= "<font color=\"grey\"><s>";
-    				$calendar .= "<b>" . $row["service"] . "</b><br>ID: " . $row["id"] . "<br>" . $row["username"]  . "<br>";
-    				if($current_epoch == $row["day"] ) {
-    					$calendar .= "Booking is: " .  $row["time"]. "<br><hr><br>";
-    				}
-                    
-					if($row["canceled"] == 1) $calendar .= "</s></font>";
-    			}
-			} else {
-    			$calendar .= "No bookings";
-			}
+            <option>12:00-13:00</option> <?php } ?>
+                     
+        <?php        
+        $sql2 = "SELECT COUNT(*) from $booktb WHERE service='$service' and canceled=0  and time='13:00-14:00' and day='$day' ";
+        $count = mysqli_query($conn, $sql2);
+        $row2 = mysqli_fetch_array($count); 
+        
+        if (!($row2[0]>=$row3['capacity'])){ ?> 
 			
-		$calendar.= '</td>';
-		if($running_day == 6):
-			$calendar.= '</tr>';
-			if(($day_counter+1) != $days_in_month):
-				$calendar.= '<tr class="calendar-row">';
-			endif;
-			$running_day = -1;
-			$days_in_this_week = 0;
-		endif;
-		$days_in_this_week++; $running_day++; $day_counter++;
-	endfor;
+            <option>13:00-14:00</option><?php } ?>
+                     
+        <?php        
+        $sql2 = "SELECT COUNT(*) from $booktb WHERE service='$service' and canceled=0  and time='14:00-15:00' and day='$day' ";
+        $count = mysqli_query($conn, $sql2);
+        $row2 = mysqli_fetch_array($count); 
+        
+        if (!($row2[0]>=$row3['capacity'])){ ?> 
+                     
+			<option>14:00-15:00</option> <?php } ?>
+                     
+        <?php        
+        $sql2 = "SELECT COUNT(*) from $booktb WHERE service='$service' and canceled=0  and time='15:00-16:00' and day='$day' ";
+        $count = mysqli_query($conn, $sql2);
+        $row2 = mysqli_fetch_array($count); 
+        
+        if (!($row2[0]>=$row3['capacity'])){ ?> 
+                             
+			<option>15:00-16:00</option> <?php } ?>
+                     
+        <?php        
+        $sql2 = "SELECT COUNT(*) from $booktb WHERE service='$service' and canceled=0  and time='16:00-17:00' and day='$day' ";
+        $count = mysqli_query($conn, $sql2);
+        $row2 = mysqli_fetch_array($count); 
+        
+        if (!($row2[0]>=$row3['capacity'])){ ?> 
+                     
+			<option>16:00-17:00</option> <?php } ?>
+                     
+        <?php        
+        $sql2 = "SELECT COUNT(*) from $booktb WHERE service='$service' and canceled=0  and time='17:00-18:00' and day='$day' ";
+        $count = mysqli_query($conn, $sql2);
+        $row2 = mysqli_fetch_array($count); 
+        
+        if (!($row2[0]>=$row3['capacity'])){ ?> 
+                     
+			<option>17:00-18:00</option> <?php } ?>
+                     
+        <?php        
+        $sql2 = "SELECT COUNT(*) from $booktb WHERE service='$service' and canceled=0  and time='18:00-19:00' and day='$day' ";
+        $count = mysqli_query($conn, $sql2);
+        $row2 = mysqli_fetch_array($count); 
+        
+        if (!($row2[0]>=$row3['capacity'])){ ?> 
+                     
+			<option>18:00-19:00</option> <?php } ?>
+                     
+        <?php        
+        $sql2 = "SELECT COUNT(*) from $booktb WHERE service='$service' and canceled=0  and time='19:00-20:00' and day='$day' ";
+        $count = mysqli_query($conn, $sql2);
+        $row2 = mysqli_fetch_array($count); 
+        
+        if (!($row2[0]>=$row3['capacity'])){ ?> 
+                     
+			<option>19:00-20:00</option> <?php } ?>
+                     
+        <?php        
+        $sql2 = "SELECT COUNT(*) from $booktb WHERE service='$service' and canceled=0  and time='20:00-21:00' and day='$day' ";
+        $count = mysqli_query($conn, $sql2);
+        $row2 = mysqli_fetch_array($count); 
+        
+        if (!($row2[0]>=$row3['capacity'])){ ?> 
+                     
+			<option>20:00-21:00</option> <?php } ?>
+			
+			</select>
+            </div>
+             <input name="book" type="submit" value="Book" class="btn btn-lg btn-success btn-block round "/>
+		</form>
+           
+		
+    <?php
+    
+    
+    }
+    ?>
+             <hr>
+		<h5 class="text-left py-3">Cancel booking</h5>
+            
+             
+		
+		<form action="index.php" method="post">
+			  <div class="form-group service-label">
+                  <div class='input-group'>
+                     <span class="input-group-addon">
+                       ID
+                    </span>
+		<input type='text' id="from" class="form-control" name="id" />
+                  </div>
+            </div>
+			<input name="cancel" type="submit" class="btn btn-lg btn-danger btn-block round"value="Cancel" />
+           
+		</form>
+    
+    
+   
+    
+<?php 
 
-	/* finish the rest of the days in the week */
-	if($days_in_this_week < 8):
-		for($x = 1; $x <= (8 - $days_in_this_week); $x++):
-			$calendar.= '<td class="calendar-day-np"> </td>';
-		endfor;
-	endif;
-
-	/* final row */
-	$calendar.= '</tr>';
-
-	/* end the table */
-	$calendar.= '</table>';
-	
-	mysqli_close($conn);
-	
-	/* all done, return result */
-	return $calendar;
-}
 
 include 'config.php';
+$role=$_SESSION['role'];
+$user=$_SESSION['username'];
 
-$d = new DateTime(date("Y-m-d"));
-echo '<h3>' . $months[$d->format('n')-1] . ' ' . $d->format('Y') . '</h3>';
-echo draw_calendar($d->format('m'),$d->format('Y'));
+      
+      
 
-$d->modify( 'first day of next month' );
-echo '<h3>' . $months[$d->format('n')-1] . ' ' . $d->format('Y') . '</h3>';
-echo draw_calendar($d->format('m'),$d->format('Y'));
 
-$d->modify( 'first day of next month' );
-echo '<h3>' . $months[$d->format('n')-1] . ' ' . $d->format('Y') . '</h3>';
-echo draw_calendar($d->format('m'),$d->format('Y'));
+    
 
+    
+    
+if (($role=="Admin")||($role=="physiotherapist")||($role=="MassageTherapist")){  
+    
+   
+         
+   
+    
+ 
+    
+
+    
+if ($role=="physiotherapist")  {
+    $sql9 = "SELECT COUNT(*) from $booktb WHERE service='Physiotherapy'and canceled=0 ";
+         $use = mysqli_query($conn, $sql9);
+         $row9 = mysqli_fetch_array($use);
+        $userows=$row9[0];
+    
+    $sql10 = "SELECT * FROM $booktb WHERE service='Physiotherapy' and canceled=0 Order by day";
+						
+			$result10 = mysqli_query($conn, $sql10);
+    
+    $c=0;
+    if ($userows > 0) {
+       
+        echo "Bookings of Physiotherapy: "; 
+     
+         echo "\tBookID\tUsername\tService\tDate\tTime\t";
+      
+        while ($row10 = mysqli_fetch_assoc($result10)) {
+             
+           echo $row10["id"]."\t".$row10["service"]."\t";
+           echo date('m/d/Y',$row10["day"]);
+              echo "\t".$row10["time"];
+         
+            $c++;
+        }
+    
+        echo "Total ".$c." bookings";
+    } else {
+        echo "<h3>No Bookings of Physiotherapy</h3>";
+        }
+
+    
+}else if ($role=="MassageTherapist")  {
+    $sql9 = "SELECT COUNT(*) from $booktb WHERE service='Massage' and canceled=0";
+         $use = mysqli_query($conn, $sql9);
+         $row9 = mysqli_fetch_array($use);
+        $userows=$row9[0];
+    
+    $sql10 = "SELECT * FROM $booktb WHERE service='Massage' and canceled=0 Order by day";
+						
+			$result10 = mysqli_query($conn, $sql10);
+    
+    $c=0;
+    if ($userows > 0) {
+         
+        echo "Bookings of Massage: "; 
+         
+         echo "\tBookID\tUsername\tService\tDate\tTime\t";
+         
+        while ($row10 = mysqli_fetch_assoc($result10)) {
+             
+           echo $row10["id"]."\t".$row10["service"]."\t";
+           echo date('m/d/Y',$row10["day"]);
+              echo "\t".$row10["time"];
+             
+            $c++;
+        }
+         
+        echo "Total ".$c." bookings";
+    } else {
+        echo "<h3>No Bookings of Massage</h3>";
+        }
+  
+}
+}
 ?>
+   
+ 
+<?php
+  
+   
+         if(isset($_POST["book"])) {
+		$time = htmlspecialchars($_POST["time"]);
+		$username = $_SESSION['username'];
+		$service=$_SESSION["service"];
+        $day=$_SESSION["day"];
+		 $_SESSION["time"]=$time;
+    
+       
+		// prevent double booking
+		
+        
+         $sql4 = "SELECT COUNT(*) from $booktb WHERE service='$service' and canceled=0  and time='$time' and day='$day' and username='$username' ";
+        $count4 = mysqli_query($conn, $sql4);
+         $row4 = mysqli_fetch_array($count4);
+        
+        
+        
+        if($row4[0]>0){
+              $_SESSION['error']="Unfortunately you booked an other service for this time and date."; 
+           
+          
+        }
+      
+    
+		$sql = "INSERT INTO $booktb (username, service, day, time, canceled)
+			VALUES ('$username', '$service', '$day', '$time', 0)";
+     
+        
+        
+        
+		if (mysqli_query($conn, $sql)) {
+		  
+           $corday= date('m/d/Y',$day);
+       
+        
+        $email=$_SESSION['email'];
+        
+         $sql10 = "SELECT * FROM $booktb WHERE username='$username' and day='$day' and time='$time' and service='$service'";
+						
+			$re = mysqli_query($conn, $sql10);
+        $id=mysqli_fetch_array($re);
+        
+        
+        $msg= "This is MS FiT Care Gym. \n\nYour booking for ".$service." on ".$corday." at ".$time." with ID:".$id["id"]." was succesfully registered!";
+        $msg=wordwrap($msg,70);
+        
+        mail($email,"Booking Confirmation ",$msg);
+       
+       
+		} else {
+			echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+		}
+		
+		
+		
+        
+          $_SESSION['error']="Booking succeed."; 
+              echo '<meta http-equiv="refresh" content="0">';
+         }
+  
 
+    
+    
+    
+ 
+    
+    if(isset($_POST["cancel"])) {
+        $id = intval(htmlspecialchars($_POST["id"]));
+        $username=$_SESSION['username'];
+        $role=$_SESSION['role'];
+        
+        //check if user cansels HIS booking
+        
+        $sql0 = "SELECT COUNT(*) from $booktb WHERE id = $id  and username='$username'";
+         $count0 = mysqli_query($conn, $sql0);
+         $row0 = mysqli_fetch_array($count0);
+       
+        $sql5= "SELECT service from $booktb where id=$id";
+         $serv = mysqli_query($conn, $sql5);
+         $row5 = mysqli_fetch_array($serv);
+       
+       
+        if (($row0[0]==1)||($role=="Admin")||(($row5[0]=="Physiotherapy")&&($role=="physiotherapist"))||(($row5[0]=="Massage")&&($role=="MassageTherapist"))){
+           
+            
+            
+		  $sql = "UPDATE $booktb SET canceled=1 WHERE id = $id";
+		  if (mysqli_query($conn, $sql)) {
+			
+                $_SESSION['error']="Booking cancelled.";
+              
+		  }
+		  else {
+            echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+		  }
+            
+        }
+        else{
+             $_SESSION['error']="This is not your booking";
+           
+        }
+      echo '<meta http-equiv="refresh" content="0">';
+    }
+    
+   
+    ?>
+            </div>
+            </div>
+        </div>
+          </div>
+           
+          </div>
+            </div>  
+    <?php  if($_SESSION['customer_id']>=1){
+     if ($_SESSION['role']=='Admin') { ?>
+    <div class="admin-bookings">
+    <div class="container">
+        <?php if(isset($_POST["delete"])) {
+    
+        $sql6 = "SELECT COUNT(*) from $booktb WHERE canceled=1  ";
+        $canc = mysqli_query($conn, $sql6);
+        $row6 = mysqli_fetch_array($canc);
+        $cancelled=$row6[0];
+    
+        $sql7 = "SELECT * FROM $booktb WHERE canceled=1";
+						
+        $resu = mysqli_query($conn, $sql7);
+    
+        $c=0;
+        if ($cancelled > 0) {
+    			while($row = mysqli_fetch_assoc($resu)){
+                $sql8 = "DELETE FROM $booktb WHERE canceled=1 ";
+				if (mysqli_query($conn, $sql8)) {
+                     $c++;
+                }
+                else {
+                    echo "Error: " . $sql8 . "<br>" . mysqli_error($conn);
+                }
+         }
+            
+       
+        $_SESSION['error']= "Cancelled Bookings are Cleared, total bookings cancelled: $c";
+        } else {
+            $_SESSION['error'] = "No bookings deleted";
+            
+         
+        
+        }
+    echo '<meta http-equiv="refresh" content="0">';
+         
+    } ?>
+            
+        
+     <?php   if(isset($_POST["past"])) {
+        
+         
+       $timenow = time();
+        
+       
+    
+    $sql6 = "SELECT COUNT(*) from $booktb WHERE day<'$timenow'  ";
+         $canc = mysqli_query($conn, $sql6);
+         $row6 = mysqli_fetch_array($canc);
+        $cancelled=$row6[0];
+    
+    $sql7 = "SELECT * FROM $booktb WHERE day<'$timenow'";
+						
+			$resu = mysqli_query($conn, $sql7);
+    
+    $c=0;
+    if ($cancelled > 0) {
+    			
+     
+            while($row = mysqli_fetch_assoc($resu)){
+                   
+                
+                $sql8 = "DELETE FROM $booktb WHERE day<'$timenow'";
+				    if (mysqli_query($conn, $sql8)) {
+                       
+                        $c++;
+                    }
+                    else {
+                        echo "Error: " . $sql8 . "<br>" . mysqli_error($conn);
+                    }
+                }
+            
+       
+         $_SESSION['error'] ="Past Bookings are Cleared, total bookings cancelled: $c";
+        } else {
+         $_SESSION['error']="No past Bookings"; 
+            
+        
+        }
+ echo '<meta http-equiv="refresh" content="0">';
+    
+	} ?>
+           <form  method="post" class="py-3" action="index.php">
+          <input name="past" type="submit" class="btn btn-lg btn-danger round " value="Clear Past Bookings" />
+		</form>
+         <form method="post" class="py-2"action="index.php">
+          <input name="delete" type="submit" class="btn btn-lg btn-success round "value="Clear Cancelled Bookings!" />
+		</form>
+    <div class="row">
+        <div class="col-lg-12 col-md-10">
+      <div id="accordion">
+       
+   
+           <?php if ($role=="Admin"){
+    
+ 
+                $sqls = "SELECT * FROM $servicestb ";
+                       $serv = mysqli_query($conn, $sqls);
+                
+               
+                  
+                   
+                       
+                while (  $rowser = mysqli_fetch_assoc($serv) ) {
+                    
+                      $servicet= $rowser['title'];
+                        
+                        $sql9 = "SELECT COUNT(*) from $booktb WHERE service='$servicet' ";
+                        $use = mysqli_query($conn, $sql9);
+                        $row9 = mysqli_fetch_array($use);
+                        $userows=$row9[0];
+    
+                        $sql10 = "SELECT * FROM $booktb WHERE service='$servicet' Order by day";
+						
+                        $result10 = mysqli_query($conn, $sql10);
+    
+                        $c=0;
+                        if ($userows > 0) { ?>
+             <div class="card">
+                    <div class="card-header" id="<?php echo $servicet; ?>">
+                                <h5 class="mb-0">
+                <button class="btn btn-link" data-toggle="collapse" data-target="#collapse-<?php echo $servicet; ?>" aria-expanded="true" aria-controls="collapse<?php echo $servicet; ?>">
+                       <?php echo '<h5>' .$servicet. '</h5>'; ?>
+                </button>
+                    </h5>
+                    </div>
+        
+                    <div id="collapse-<?php echo $servicet; ?>" class="collapse" aria-labelledby="<?php echo $servicet; ?>" data-parent="#accordion">
+      <div class="card-body">
+                              <?php
+                                 
+                               
+            
+                                while ($row10 = mysqli_fetch_assoc($result10)) {
+                                     
+                             
+                                        
+                                    $row10["id"]."\t".$row10["username"]."\t".$row10["service"]."\t";
+                                    echo date('m/d/Y',$row10["day"]);
+                                    echo "\t".$row10["time"]."\t".$row10["canceled"];
+                                     
+                                    $c++;
+                                }
+                                 
+                                echo "Total ".$c." bookings";
+                                } ?>
+                        </div>
+                 </div>
+          </div>
+        
+                
+    
+                      
+    
+               <?php } 
+                                
+              
+  } ?>
+           
+        
+        
+        
+        
+        </div>
+    </div>
+    </div>
+        </div>
+        <br>
+    <br>
+    </div>
+    <?php  }
+     } ?>
+    <footer class="page-footer top-menu color-footer">
+  
+      
+      <div class="container">
+				
+					
+						
+							<div class="row">
+								<div class="col-md-4">
+                                 <div class="top-margin">
+									<div class="icon"> <i class="fas fa-mobile-alt"></i></div>
+                                    <div class="loc">
+										
+										<p> Tel. 24726444, 99481883 <br>Email: mspetsioti81@hotmail.com</p>
+                                       
+									</div>
+                                    </div>
+								</div>
+								<div class="col-md-4 ">
+                                     <div class="top-margin">
+                                   <div class="icon"> <i class="fas fa-map-marker-alt"></i></div>
+                                    <div class="loc">
+										
+										<p> Nikos Theophanous,<br> Xylophagou 7520, Larnaca</p>
+									</div>
+                                        </div>
+								</div>
+								<div class="col-md-4">
+                                    <div class="top-margin-cstm text-center">
+                                   <p> Socialise with us!</p>
+                                       <a href="http://facebook.com">    <i class="fab fa-facebook"></i>        </a>                                
+                                    </div>
+								</div>
+                                
+							</div>
+						
+					
+				</div>
+			
+
+  </footer>
+  
 </body>
 
 </html>
