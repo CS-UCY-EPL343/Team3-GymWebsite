@@ -1,8 +1,10 @@
-<?php session_start(); ?>
+<?php session_start();
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>MS Fit Care Gym | Shop</title>
+  <title>MS Fit Care Gym | Services </title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
@@ -16,8 +18,8 @@
 </head>
 <body>
     
-    <?php if (!($_SERVER['HTTP_X_REQUESTED_WITH'] == "com.example.gym")) { ?>
-    <nav class="navbar navbar-expand-lg navbar-light bg-custom">
+     <?php if (!($_SERVER['HTTP_X_REQUESTED_WITH'] == "com.example.gym")) { ?>
+   <nav class="navbar navbar-expand-lg navbar-light bg-custom">
  
   <button class="navbar-toggler navbar-light" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -62,7 +64,7 @@
     
   </div>
 </nav>
-<?php } ?>
+    <?php } ?>
 
 <div class="jumbotron shop-cover jumbotron-fluid" id="top-jumpo2">
   <div class="container text-center">
@@ -71,8 +73,8 @@
    <div class="col-md-2"></div>
     <div class="col-md-8"><p> </p> 
           <div class="text-center">
-        <h1> Shop </h1>
-              <p> Have a look at the products that our gym is selling. For more information do not hesitate to contact us.</p>
+        <h1> Services </h1>
+              <p> Have a look at the services that our gym provides. For more information do not hesitate to contact us.</p>
         </div>
 
           </div>
@@ -81,11 +83,14 @@
   </div>
 </div>
     
-    <div class= "container-fluid merge-button">
-     <div class="row add justify-content-center">
-        <?php  if($_SESSION['customer_id']>=1){
-     if ($_SESSION['role']=='Admin') { ?>
-         <a href="add-product.html" class="btn btn-primary round add-btn-color">Add Product</a>
+    <div class= "container-fluid  merge-button">
+    
+        <div class="row add justify-content-center">
+        <a href="../booking/index.php" class="btn btn-register round" >Book Service</a>
+          <?php  
+            if($_SESSION['customer_id']>=1){
+     if ($_SESSION['role']=='Admin') { ?>  
+         <a href="add-service.html" class="btn btn-primary round add-btn-color">Add Service</a>
          <?php  }
      } ?>
           <div class="modal fade" id="modalAddProduct" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
@@ -97,12 +102,17 @@
               </div>
 </div>
     </div>
+        
+        
     </div>
+    
     <div class="products-section" id="load-products">
     
         <br>
       <br>
+       
     </div>
+    
 <!-- Footer -->
 <footer class="page-footer top-menu color-footer">
   
@@ -152,6 +162,6 @@
   <!-- Footer -->
     <script src="https://unpkg.com/sweetalert2@7.8.2/dist/sweetalert2.all.js"></script>
 
-   <script src="shop.js"></script>
+   <script src="services.js"></script>
 </body>
 </html>

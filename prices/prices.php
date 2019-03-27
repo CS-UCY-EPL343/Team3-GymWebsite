@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>MS Fit Care Gym | Shop</title>
+  <title>MS Fit Care Gym | Pricelist</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
@@ -51,7 +51,7 @@
          <li class="nav-item">
         <a class="nav-link" href="../announcements/announcement.php"><i class="fas fa-bullhorn fa-fw"></i>Announcements</a>
       </li>
-          <li class="nav-item">
+         <li class="nav-item">
              <?php if(!isset($_SESSION['customer_id'])){ ?>
         <a class="nav-link" href="../registration/login.php"><i class="fas fa-key fa-fw"></i>Login</a>
             <?php } else { ?>
@@ -64,30 +64,29 @@
 </nav>
 <?php } ?>
 
-<div class="jumbotron shop-cover jumbotron-fluid" id="top-jumpo2">
+<div class="jumbotron prices-cover jumbotron-fluid" id="top-jumpo">
   <div class="container text-center">
-      
-      <div class="row">
-   <div class="col-md-2"></div>
-    <div class="col-md-8"><p> </p> 
-          <div class="text-center">
-        <h1> Shop </h1>
-              <p> Have a look at the products that our gym is selling. For more information do not hesitate to contact us.</p>
-        </div>
+      <h1 class="text-center welcome">Prices</h1>
+      <div class="row main-content">
+  
+    <div class="col-sm-12 col-md-12 col-lg-9 mx-auto"><p>This is the prices section of the Gym. You can find the prices for all the services and the subscriptions our gym is offering. Please note that the trial of the programs is free! For any questions you may have, do not hesitate to contact us.  </p> 
+         
 
           </div>
-          <div class="col-md-2"></div>
+         
       </div>
   </div>
 </div>
     
-    <div class= "container-fluid merge-button">
-     <div class="row add justify-content-center">
+    <div class= "container-fluid add-button">
         <?php  if($_SESSION['customer_id']>=1){
      if ($_SESSION['role']=='Admin') { ?>
-         <a href="add-product.html" class="btn btn-primary round add-btn-color">Add Product</a>
-         <?php  }
+     <div class="row add justify-content-center ">
+         <a href="add-price.html" class="btn btn-primary round add-btn-color">Add Price</a>
+         </div>
+        <?php  }
      } ?>
+         </div>
           <div class="modal fade" id="modalAddProduct" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
   aria-hidden="true">
          <div class="modal-dialog" role="document">
@@ -96,15 +95,15 @@
              </div>
               </div>
 </div>
-    </div>
-    </div>
+   
+ 
     <div class="products-section" id="load-products">
     
         <br>
       <br>
     </div>
 <!-- Footer -->
-<footer class="page-footer top-menu color-footer">
+ <footer class="page-footer top-menu color-footer">
   
       
       <div class="container"> 
@@ -152,6 +151,6 @@
   <!-- Footer -->
     <script src="https://unpkg.com/sweetalert2@7.8.2/dist/sweetalert2.all.js"></script>
 
-   <script src="shop.js"></script>
+   <script src="prices.js"></script>
 </body>
 </html>

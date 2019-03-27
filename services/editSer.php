@@ -2,13 +2,12 @@
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 require_once('../connect.php');
-
+$response = array();
 
  if (!empty($_POST)) {
-     $response = array();
      
- 
-$filename = $_FILES['file']['name'];
+  
+     $filename = $_FILES['file']['name'];
 
 
 $location = '../uploads/'.$filename;
@@ -27,28 +26,34 @@ if(in_array($file_extension,$image_ext)){
    $response['img_status'] = $location;
   }
 }
-  
-             $title = $_POST["ptitle"];
+     $id = $_POST["id"];
+     $title = $_POST["title"];
      $description = $_POST["description"];
-     $price = $_POST["price"];
-     //$picture = $_POST["picture"];
+     $capacity = $_POST["capacity"];
+    // $image = $_POST["image"];
      
-		$query = "insert into products(name,description,img_file,price) values(:title, :description, :picture, :price)";
+		$query = "update services set title=:title, description=:description, image=:image, capacity=:capacity where service_id=:id";
 	    $stmt = $DBcon->prepare( $query );
-		
+		$stmt->bindParam(':id', $id,PDO::PARAM_INT);
         $stmt->bindParam(':title', $title);
         $stmt->bindParam(':description', $description);
-        $stmt->bindParam(':picture', $filename);
-        $stmt->bindParam(':price', $price);
+        $stmt->bindParam(':image', $filename);
+        $stmt->bindParam(':capacity', $capacity);
      
 
       
      $stmt->execute();
    
-  
+    if ($stmt) {
+			$response['status']  = 'success';
+			$response['message'] = 'Service Deleted Successfully ...';
+		} else {
+			$response['status']  = 'error';
+			$response['message'] = 'Unable to delete Service ...';
+		}
      
     echo $json_encode($response);
   
         
         }
-     ?>
+    ?>

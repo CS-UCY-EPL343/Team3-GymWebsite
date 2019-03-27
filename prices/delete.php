@@ -9,7 +9,7 @@
 		require_once '../connect.php';
 		
 		$pid = intval($_POST['delete']);
-		$query = "DELETE FROM products WHERE id=:pid";
+		$query = "DELETE FROM prices WHERE id=:pid";
 		$stmt = $DBcon->prepare( $query );
 		$stmt->execute(array(':pid'=>$pid));
 		

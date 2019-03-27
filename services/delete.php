@@ -9,16 +9,16 @@
 		require_once '../connect.php';
 		
 		$pid = intval($_POST['delete']);
-		$query = "DELETE FROM products WHERE id=:pid";
+		$query = "DELETE FROM services WHERE service_id=:pid";
 		$stmt = $DBcon->prepare( $query );
 		$stmt->execute(array(':pid'=>$pid));
 		
 		if ($stmt) {
 			$response['status']  = 'success';
-			$response['message'] = 'Product Deleted Successfully ...';
+			$response['message'] = 'Service Deleted Successfully ...';
 		} else {
 			$response['status']  = 'error';
-			$response['message'] = 'Unable to delete product ...';
+			$response['message'] = 'Unable to delete service ...';
 		}
 		echo json_encode($response);
 	}
