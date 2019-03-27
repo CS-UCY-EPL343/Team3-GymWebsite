@@ -1,8 +1,7 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Bootstrap Example</title>
+  <title>MS Fit Care Gym | Register Successfull</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
@@ -23,32 +22,39 @@
   </button>
 
         
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+   <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <a class="navbar-brand ml-auto mx-auto" href="#">
           <img src="../img/logo-test.png" alt="" width="70" height="90">
         </a>
-    <ul class="navbar-nav navbar-light bg-light ml-auto">
+     <ul class="navbar-nav navbar-light bg-light ml-auto">
       <li class="nav-item">
-        <a class="nav-link" href="index.html"><i class="fas fa-home fa-fw"> </i>Home </a>
-      </li>
+        <a class="nav-link" href="../index.php"><i class="fas fa-home fa-fw"> </i>Home </a>
+      </li>  
       <li class="nav-item">
-          <a class="nav-link" href="../profile.html"> <i class="fas fa-user fa-fw"></i>Profile</a>
+          <a class="nav-link" href="../profile/profile.php"> <i class="fas fa-user fa-fw"></i>Profile</a>
       </li>
      <li class="nav-item">
-        <a class="nav-link" href="../programs.html"><i class="fas fa-dumbbell fa-fw"></i>Programs</a>
+        <a class="nav-link" href="../programs/program.php"><i class="fas fa-dumbbell fa-fw"></i>Programs</a>
       </li>
     
           <li class="nav-item">
-        <a class="nav-link" href="../extra-facilities.html"><i class="fas fa-calendar-check fa-fw"></i>Extra Facilities</a>
+        <a class="nav-link" href="../services/services.php"><i class="fas fa-calendar-check fa-fw"></i>Services</a>
       </li>
          <li class="nav-item">
         <a class="nav-link" href="../shop/shop.php"><i class="fas fa-shopping-cart fa-fw"></i>Shop</a>
       </li>
          <li class="nav-item">
-        <a class="nav-link" href="../prices.html"><i class="fas fa-dollar-sign fa-fw"></i>Prices</a>
+        <a class="nav-link" href="../prices/prices.php"><i class="fas fa-dollar-sign fa-fw"></i>Prices</a>
       </li>
          <li class="nav-item">
-        <a class="nav-link" href="../announcements.html"><i class="fas fa-bullhorn fa-fw"></i>Announcements</a>
+        <a class="nav-link" href="../announcements/announcement.php"><i class="fas fa-bullhorn fa-fw"></i>Announcements</a>
+      </li>
+         <li class="nav-item">
+             <?php if(!isset($_SESSION['customer_id'])){ ?>
+        <a class="nav-link" href="registration/login.php"><i class="fas fa-key fa-fw"></i>Login</a>
+            <?php } else { ?>
+        <a class="nav-link btn-danger round" id="logout" href="registration/logout.php"><i class="fas fa-key fa-fw"></i>Logout</a> 
+             <?php } ?>
       </li>
     </ul>
     
@@ -76,35 +82,39 @@
 <footer class="page-footer top-menu color-footer">
   
       
-      <div class="container">
+      <div class="container"> 
 				
 					
 						
 							<div class="row">
-								<div class="col-md-4">
-                                 <div class="top-margin">
-									<div class="icon"> <i class="fas fa-mobile-alt"></i></div>
+								<div class="col-md-4 py-4">
+                                  
+								 <i class="fas fa-mobile-alt mx-auto"></i>
                                     <div class="loc">
 										
-										<p> Tel. 24726444, 99481883 <br>Email: mspetsioti81@hotmail.com</p>
+										<p> Tel. 24726444, 99481883 <br> mspetsioti81@hotmail.com</p>
                                        
 									</div>
-                                    </div>
+                                   
 								</div>
-								<div class="col-md-4 ">
-                                     <div class="top-margin">
-                                   <div class="icon"> <i class="fas fa-map-marker-alt"></i></div>
+								<div class="col-md-4 py-4">
+                                    
+                                    <i class="fas fa-map-marker-alt mx-auto"></i>
                                     <div class="loc">
 										
 										<p> Nikos Theophanous,<br> Xylophagou 7520, Larnaca</p>
 									</div>
                                         </div>
-								</div>
-								<div class="col-md-4">
-                                    <div class="top-margin-cstm text-center">
-                                   <p> Socialise with us!</p>
-                                       <a href="http://facebook.com">    <i class="fab fa-facebook"></i>        </a>                                
-                                    </div>
+								
+								<div class="col-md-3 py-4">
+                                   
+                                   
+                                       <a href="http://facebook.com">    <i class="fab fa-facebook mx-auto"></i>        </a>                                
+                                   
+                                    <div class="loc">
+										
+										<p> Socialise with us!</p>
+									</div>
 								</div>
                                 
 							</div>

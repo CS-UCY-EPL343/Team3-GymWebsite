@@ -65,6 +65,7 @@
         <div class="card card-signin my-5">
           <div class="card-body">
             <?php echo '<h1> Logged In </h1>'; ?>
+             <?php echo "loukia   " .$_SESSION['customer_id']; ?>
                
           </div>
         </div>

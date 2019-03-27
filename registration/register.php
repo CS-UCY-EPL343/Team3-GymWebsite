@@ -47,7 +47,9 @@ if (!empty($_POST['btnRegister'])) {
         $register_error_message = 'Username field is required!';
     } else if ($_POST['password'] == "") {
         $register_error_message = 'Password field is required!';
-    } else if (!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
+    }else if(preg_match("/^.*(?=.{8,})(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]).*$/", $_POST['password']) === 0){
+        $register_error_message = '<p class="errText">Password must be at least 8 characters and must contain at least one lower case letter, one upper case letter and one digit</p>';
+    }else if (!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
         $register_error_message = 'Invalid email address!';
     } else if ($app->isEmail($DBcon,$_POST['email'])) {
         $register_error_message = 'Email is already in use!';
