@@ -10,6 +10,6 @@ $check=1;
 }
 
 if($check==0){
-header("Location:login.php");    
+header("Location:  ../registration/login.php");    
 }
 ?>

@@ -1,8 +1,8 @@
 <?php
 $servername = "localhost";
-$username = "root";
-$password = "";
-$database="database";
+$username = "gym";
+$password = "VzuNPZeNYErTHXGT";
+$database="gym";
 //$charset='utf8'; // specify the character set
 //$collation='utf8_general_ci'; //specify what collation you wish to use
 
