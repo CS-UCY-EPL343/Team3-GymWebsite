@@ -42,7 +42,7 @@ struct universalConfig {
     }
 }
 
-//function that has to run once by the main ViewController in order to initialize the universan WebvView configuration elements
+//function that has to run once by the main ViewController in order to initialize the universal WebvView configuration elements
 func initConfig(){
     //enable javascript content support
     WebViewConfiguration.universalConfig.config.preferences.javaScriptEnabled=true
