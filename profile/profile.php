@@ -112,7 +112,7 @@ include("../announcements/GeneralAuth.php");
     <input type="number" id="telephone" name="telephone" class="form-control" value="<?php echo $fetched_ann["telephone"] ?>">
          </div>
       
-         <?php   if(!empty($_SESSION['program'])){ ?>
+         <?php   if(!empty($_SESSION['program'])){      ?>
         
           <a href="<?php echo $_SESSION['program'] ?>" class="btn btn-lg btn-block btn-danger text-uppercase ">Download Program</a>
 
@@ -196,10 +196,28 @@ $sql9 = "SELECT COUNT(*) from book WHERE username='$user' ";
      $username = $_POST['username'] ;
      $telephone = $_POST['telephone'] ;
        
+ 	if (empty($name)) {
+        $name= $fetched_ann["name"];
+            }
+	if (empty($surname)) {
+        $surname= $fetched_ann["surname"];
+            }
+	if (empty($email)) {
+        $email= $fetched_ann["email"];
+            }
+	if (empty($username)) {
+        $username= $fetched_ann["username"];
+            }
+	if (empty($telephone)) {
+        $telephone= $fetched_ann["telephone"];
+            }
+
         $query1 = mysqli_query($conn,"SELECT * FROM customers WHERE email='$email'");
         $num_rows1 = mysqli_num_rows($query1);
         $query2= mysqli_query($conn,"SELECT * FROM customers WHERE username='$username'");
         $num_rows2 = mysqli_num_rows($query2);
+	
+	
         
         if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
         echo "Invalid email address!";
