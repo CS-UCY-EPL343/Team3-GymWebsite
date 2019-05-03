@@ -146,12 +146,12 @@ include("../announcements/GeneralAuth.php");
     $user=$_SESSION['username'];
    
      
-$sql9 = "SELECT COUNT(*) from book WHERE username='$user' ";
+$sql9 = "SELECT COUNT(*) from book WHERE username='$user'and canceled=0";
          $use = mysqli_query($conn, $sql9);
          $row9 = mysqli_fetch_array($use);
         $userows=$row9[0];
     
-    $sql10 = "SELECT * FROM book WHERE username='$user'";
+    $sql10 = "SELECT * FROM book WHERE username='$user'and canceled=0";
 						
 			$result10 = mysqli_query($conn, $sql10);
     
@@ -190,11 +190,11 @@ $sql9 = "SELECT COUNT(*) from book WHERE username='$user' ";
    
 	 mysqli_select_db($conn,"database");
     if(isset($_POST['send'])) {		
-     $name = $_POST['name'] ;
-     $surname = $_POST['surname'] ;
-     $email = $_POST['email'] ;
-     $username = $_POST['username'] ;
-     $telephone = $_POST['telephone'] ;
+     $name = str_replace("\"'", " ",$_POST['name']) ;
+     $surname = str_replace("\"'", " ",$_POST['surname']) ;
+     $email =str_replace("\"'", " ", $_POST['email']) ;
+     $username = str_replace("\"'", " ",$_POST['username']) ;
+     $telephone = str_replace("\"'", " ",$_POST['telephone']) ;
        
  	if (empty($name)) {
         $name= $fetched_ann["name"];

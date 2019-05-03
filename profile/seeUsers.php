@@ -103,9 +103,9 @@ include("../announcements/connect1.php");
    
   
            
-         while ($row=mysqli_fetch_array($sql)) { ?>
+         while ($row=mysqli_fetch_array($sql)) { 
             
-            
+    if ($row['role']!='Admin') { ?>
             <tr>
                 <td><p ><?php echo $row["name"]; ?></p></td>
            
@@ -120,9 +120,16 @@ include("../announcements/connect1.php");
                 <td> <p><?php echo $row["sex"]; ?></p></td>
           
                 <td><p><?php echo $row["role"]; ?></p></td>
-                <td><?php  echo ' <a href="editU.php?customer_id='.$row["customer_id"].' "> <i class="fas fa-pencil-alt"></i></a>
+    	
+     	
+     	<td><?php  echo ' <a href="editU.php?customer_id='.$row["customer_id"].' "> <i class="fas fa-pencil-alt"></i></a>
         <a href="deleteU.php?customer_id='.$row["customer_id"].'"> <i class="fa fa-trash"></i> </a>'; ?> </td>
                 </tr>
+          
+     
+       <?php  } ?>
+  
+                
             
             <?php } ?>
                
