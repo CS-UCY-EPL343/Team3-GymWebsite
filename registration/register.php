@@ -188,14 +188,14 @@ if (!empty($_POST['btnRegister'])) {
             </label>
             </div>
                <div class="captcha">
-                 <div class="g-recaptcha" data-sitekey="6LeGdJcUAAAAAPkXT2gwMtBFK6_JmiNtxa5UQKo5"></div>
+                 <div class="g-recaptcha" data-sitekey="6LeGdJcUAAAAAPkXT2gwMtBFK6_JmiNtxa5UQKo5" data-callback="enableBtn"></div>
                </div>
             <div class="tos py-3">
                <input type="checkbox" name = "tos" class="form-check-input" id="exampleCheck1">
                 <label class="form-check-label" for="exampleCheck1">By checking this box you agree to the <a class="tos-terms" data-toggle="modal" data-target="#tosModal">Terms and Conditions of our website.</a></label>
                </div>
              <div class="padding">
-              <input type="submit" class="btn btn-lg btn-register btn-block text-uppercase" name="btnRegister" value="Register"/>
+              <input type="submit" class="btn btn-lg btn-register btn-block text-uppercase" name="btnRegister" id="submitForm" value="Register"/>
                </div>
                
 
@@ -357,6 +357,11 @@ Xylophagou 7520, Larnaca</p>
 
   </footer>
   <!-- Footer -->
- 
+ <script> 
+    document.getElementById("submitForm").disabled = true;
+     function enableBtn(){
+    document.getElementById("submitForm").disabled = false;
+   }
+    </script>
 </body>
 </html>

@@ -68,7 +68,7 @@
       <div class="col-sm-12 col-md-12 col-lg-9 mx-auto">
         <div class="card card-signin my-5">
           <div class="card-body">
-            <div class="alert alert-success">Your account is succesfully created. Please check your inbox for more information.</div>
+            <div class="alert alert-success">Your account is succesfully created.</div>
                
           </div>
         </div>

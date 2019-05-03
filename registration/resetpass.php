@@ -136,7 +136,7 @@ $errormsg = "YES";
       </li>
          <li class="nav-item">
              <?php if(!isset($_SESSION['customer_id'])){ ?>
-        <a class="nav-link" href="registration/login.php"><i class="fas fa-key fa-fw"></i>Login</a>
+        <a class="nav-link" href="../registration/login.php"><i class="fas fa-key fa-fw"></i>Login</a>
             <?php } else { ?>
         <a class="nav-link btn-danger round" id="logout" href="registration/logout.php"><i class="fas fa-key fa-fw"></i>Logout</a> 
              <?php } ?>
