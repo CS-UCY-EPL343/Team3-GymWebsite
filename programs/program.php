@@ -86,6 +86,7 @@ $pdf=$row['pdf'];
     </div>
    <?php  }
      } ?>
+<br>
           <img class="img-responsive img-ext" src="<?php echo $pdf ; ?>" >
         </div>
         <br>
