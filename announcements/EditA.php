@@ -6,12 +6,14 @@ include("auth.php");
 
      $flag=0;
 	  
-	 mysqli_select_db($conn,"gym");
+	 mysqli_select_db($conn,"database");
  if(isset($_POST['send'])) {		
     $date = $_POST['date'] ;
 	$subject = $_POST['subject'] ;
 	$message = $_POST['maintext'] ;
-	
+	$id = $_POST['id']; 
+
+    
 	  $sqledit=mysqli_query($conn,"UPDATE announcements SET date='$date', subject='$subject', maintext='$message' where id='$id'"); 
       $flag=1;
        }  
@@ -94,6 +96,7 @@ include("auth.php");
           <div class="card-body">
               
                 <?php $id = $_GET['id']; 
+            
     $fetch_ann = mysqli_query($conn,"select * from announcements where id='$id'");
     $fetched_ann=mysqli_fetch_array($fetch_ann); ?>
               
@@ -103,7 +106,7 @@ include("auth.php");
                 echo '<div class="alert alert-success"><strong>The announcement was updated successfully. </strong>  </div>';
             }
             ?>
-            <form action="createAnn.php" method="post" class="form-signin">
+            <form action="EditA.php" method="post" class="form-signin">
               <div class="form-label-group">
                   <label for="date">Date</label>
                 <input type="date" class="form-control" name="date" value="<?php echo $fetched_ann["date"] ?>" />
@@ -120,7 +123,7 @@ include("auth.php");
                 <input type="text" class="form-control" name="maintext" value="<?php echo $fetched_ann["maintext"] ?>" />
                 
               </div>
-             
+             <input name="id" value="<?php echo $id; ?>" type="hidden">
               <input type="submit" class="btn btn-lg btn-primary btn-block text-uppercase" name="send" type="submit" value="Add"/>
            
               
