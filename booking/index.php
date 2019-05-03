@@ -1,7 +1,10 @@
 <?php 
 session_start();
 include("../announcements/GeneralAuth.php");
+
+
 ?> 
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -23,7 +26,7 @@ include("../announcements/GeneralAuth.php");
   var holidays= [[1,1],[6,1], [25,3], [1,4], [1,5], [15,8], [1,10], [28,10], [25,12], [26,12]];
     
 function DisableSpecificDates(date) {
- 
+  $(this).attr("autocomplete", "off");  
  
  for (var j = 0; j < holidays.length; j++) {
     var m= holidays[j][1]-1;
@@ -48,13 +51,14 @@ function DisableSpecificDates(date) {
     $(function() {
 	var dateToday = new Date(); 
     $( "#from" ).datepicker({
-    
+   
     defaultDate: "+1w",
       changeMonth: true,
       numberOfMonths: 1,
         minDate: dateToday,
       onClose: function( selectedDate ) {
       },beforeShowDay: DisableSpecificDates
+        
     });
   });
    
@@ -382,22 +386,9 @@ $role=$_SESSION['role'];
 $user=$_SESSION['username'];
 
       
-      
-
-
-    
-
-    
     
 if (($role=="Admin")||($role=="physiotherapist")||($role=="MassageTherapist")){  
     
-   
-         
-   
-    
- 
-    
-
     
 if ($role=="physiotherapist")  {
     $sql9 = "SELECT COUNT(*) from $booktb WHERE service='Physiotherapy'and canceled=0 ";
@@ -423,6 +414,7 @@ if ($role=="physiotherapist")  {
               echo "\t".$row10["time"];
          
             $c++;
+            echo "<br>";
         }
     
         echo "Total ".$c." bookings";
@@ -455,6 +447,7 @@ if ($role=="physiotherapist")  {
               echo "\t".$row10["time"];
              
             $c++;
+            echo "<br>";
         }
          
         echo "Total ".$c." bookings";
@@ -532,10 +525,6 @@ if ($role=="physiotherapist")  {
   
 
     
-    
-    
- 
-    
     if(isset($_POST["cancel"])) {
         $id = intval(htmlspecialchars($_POST["id"]));
         $username=$_SESSION['username'];
@@ -551,8 +540,12 @@ if ($role=="physiotherapist")  {
          $serv = mysqli_query($conn, $sql5);
          $row5 = mysqli_fetch_array($serv);
        
+        
+        $sqlid= "SELECT canceled from $booktb where id=$id";
+         $serid = mysqli_query($conn, $sqlid);
+         $rowid = mysqli_fetch_array($serid);
        
-        if (($row0[0]==1)||($role=="Admin")||(($row5[0]=="Physiotherapy")&&($role=="physiotherapist"))||(($row5[0]=="Massage")&&($role=="MassageTherapist"))){
+        if ((($row0[0]==1)||($role=="Admin")||(($row5[0]=="Physiotherapy")&&($role=="physiotherapist"))||(($row5[0]=="Massage")&&($role=="MassageTherapist")))&&($rowid[0]==0)){
            
             
             
@@ -560,6 +553,12 @@ if ($role=="physiotherapist")  {
 		  if (mysqli_query($conn, $sql)) {
 			
                 $_SESSION['error']="Booking cancelled.";
+              $email=$_SESSION['email'];
+
+$msg= "This is MS FiT Care Gym. \n\nYour booking for ".$service." on ".$corday." at ".$time." with ID:".$id["id"]." was succesfully cancelled!";
+        $msg=wordwrap($msg,70);
+        
+        mail($email,"Booking Cancelation ",$msg);
               
 		  }
 		  else {
@@ -568,8 +567,11 @@ if ($role=="physiotherapist")  {
             
         }
         else{
+            if ($rowid[0]==1){
+                $_SESSION['error']="You already cancelled this booking";
+            }else{
              $_SESSION['error']="This is not your booking";
-           
+            }
         }
       echo '<meta http-equiv="refresh" content="0">';
     }
@@ -612,6 +614,7 @@ if ($role=="physiotherapist")  {
             
        
         $_SESSION['error']= "Cancelled Bookings are Cleared, total bookings cancelled: $c";
+           
         } else {
             $_SESSION['error'] = "No bookings deleted";
             
@@ -624,27 +627,29 @@ if ($role=="physiotherapist")  {
             
         
      <?php   if(isset($_POST["past"])) {
+         
+        
         
          
-       $timenow = time();
+         
+         $timenow = time();
         
-       
-    
-    $sql6 = "SELECT COUNT(*) from $booktb WHERE day<'$timenow'  ";
+         $sql6 = "SELECT COUNT(*) from $booktb WHERE day<'$timenow'  ";
          $canc = mysqli_query($conn, $sql6);
          $row6 = mysqli_fetch_array($canc);
-        $cancelled=$row6[0];
+         $cancelled=$row6[0];
     
-    $sql7 = "SELECT * FROM $booktb WHERE day<'$timenow'";
+   
+         $sql7 = "SELECT * FROM $booktb WHERE day<'$timenow'";
 						
 			$resu = mysqli_query($conn, $sql7);
     
     $c=0;
     if ($cancelled > 0) {
-    			
-     
-            while($row = mysqli_fetch_assoc($resu)){
-                   
+        
+       
+       
+           while($row = mysqli_fetch_assoc($resu)){
                 
                 $sql8 = "DELETE FROM $booktb WHERE day<'$timenow'";
 				    if (mysqli_query($conn, $sql8)) {
@@ -657,7 +662,11 @@ if ($role=="physiotherapist")  {
                 }
             
        
+     
+
          $_SESSION['error'] ="Past Bookings are Cleared, total bookings cancelled: $c";
+       
+        
         } else {
          $_SESSION['error']="No past Bookings"; 
             
@@ -665,13 +674,16 @@ if ($role=="physiotherapist")  {
         }
  echo '<meta http-equiv="refresh" content="0">';
     
-	} ?>
+	}  ?>
            <form  method="post" class="py-3" action="index.php">
           <input name="past" type="submit" class="btn btn-lg btn-danger round " value="Clear Past Bookings" />
 		</form>
+        
          <form method="post" class="py-2"action="index.php">
-          <input name="delete" type="submit" class="btn btn-lg btn-success round "value="Clear Cancelled Bookings!" />
+          <input name="delete" type="submit" class="btn btn-lg btn-success round "value="Clear Cancelled Bookings" />
 		</form>
+      <a href="pdf.php" class="btn btn-lg btn-success round ">PDF File</a>
+
     <div class="row">
         <div class="col-lg-12 col-md-10">
       <div id="accordion">
@@ -721,11 +733,15 @@ if ($role=="physiotherapist")  {
                                      
                              
                                         
-                                    $row10["id"]."\t".$row10["username"]."\t".$row10["service"]."\t";
+                                    echo $row10["id"]."\t".$row10["username"]."\t".$row10["service"]."\t";
                                     echo date('m/d/Y',$row10["day"]);
-                                    echo "\t".$row10["time"]."\t".$row10["canceled"];
-                                     
+                                    if ($row10["canceled"]==1){
+                                    echo "\t".$row10["time"]."\t"."cancelled";
+                                    }else{
+                                        echo "\t".$row10["time"];
+                                    }
                                     $c++;
+                                    echo "<br>";
                                 }
                                  
                                 echo "Total ".$c." bookings";
@@ -745,7 +761,7 @@ if ($role=="physiotherapist")  {
            
         
         
-        
+    
         
         </div>
     </div>
@@ -756,38 +772,42 @@ if ($role=="physiotherapist")  {
     </div>
     <?php  }
      } ?>
-    <footer class="page-footer top-menu color-footer">
+  <footer class="page-footer top-menu color-footer">
   
       
-      <div class="container">
+      <div class="container"> 
 				
 					
 						
 							<div class="row">
-								<div class="col-md-4">
-                                 <div class="top-margin">
-									<div class="icon"> <i class="fas fa-mobile-alt"></i></div>
+								<div class="col-md-4 py-4">
+                                  
+								 <i class="fas fa-mobile-alt mx-auto"></i>
                                     <div class="loc">
 										
-										<p> Tel. 24726444, 99481883 <br>Email: mspetsioti81@hotmail.com</p>
+										<p> Tel. 24726444, 99481883 <br> mspetsioti81@hotmail.com</p>
                                        
 									</div>
-                                    </div>
+                                   
 								</div>
-								<div class="col-md-4 ">
-                                     <div class="top-margin">
-                                   <div class="icon"> <i class="fas fa-map-marker-alt"></i></div>
+								<div class="col-md-4 py-4">
+                                    
+                                    <i class="fas fa-map-marker-alt mx-auto"></i>
                                     <div class="loc">
 										
 										<p> Nikos Theophanous,<br> Xylophagou 7520, Larnaca</p>
 									</div>
                                         </div>
-								</div>
-								<div class="col-md-4">
-                                    <div class="top-margin-cstm text-center">
-                                   <p> Socialise with us!</p>
-                                       <a href="http://facebook.com">    <i class="fab fa-facebook"></i>        </a>                                
-                                    </div>
+								
+								<div class="col-md-3 py-4">
+                                   
+                                   
+                                       <a href="http://facebook.com">    <i class="fab fa-facebook mx-auto"></i>        </a>                                
+                                   
+                                    <div class="loc">
+										
+										<p> Socialise with us!</p>
+									</div>
 								</div>
                                 
 							</div>
