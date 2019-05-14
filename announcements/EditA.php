@@ -9,8 +9,10 @@ include("auth.php");
 	 mysqli_select_db($conn,"database");
  if(isset($_POST['send'])) {		
     $date = $_POST['date'] ;
-	$subject = $_POST['subject'] ;
-	$message = $_POST['maintext'] ;
+	$sub = str_replace("\"", " ",$_POST['subject']);
+	$subject = str_replace(";", " ",$sub);
+	$mess =str_replace("\"", " ", $_POST['maintext']);
+	$message =str_replace(";", " ", $mess);
 	$id = $_POST['id']; 
 
     
