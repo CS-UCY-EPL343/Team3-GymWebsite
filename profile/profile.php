@@ -190,25 +190,30 @@ $sql9 = "SELECT COUNT(*) from book WHERE username='$user'and canceled=0";
    
 	 mysqli_select_db($conn,"database");
     if(isset($_POST['send'])) {		
-     $name = str_replace("\"'", " ",$_POST['name']) ;
-     $surname = str_replace("\"'", " ",$_POST['surname']) ;
-     $email =str_replace("\"'", " ", $_POST['email']) ;
-     $username = str_replace("\"'", " ",$_POST['username']) ;
-     $telephone = str_replace("\"'", " ",$_POST['telephone']) ;
+     $nam = str_replace("\"", " ",$_POST['name']) ;
+	$name = str_replace(";", " ",$nam) ;
+     $surnam = str_replace("\"", " ",$_POST['surname']) ;
+     $surname = str_replace(";", " ",$surnam) ;
+     $emai =str_replace("\"", " ", $_POST['email']) ;
+     $email =str_replace(";", " ", $emai) ;
+     $usernam= str_replace("\"", " ",$_POST['username']) ;
+     $username = str_replace(";", " ",$usernam) ;
+     $telephon = str_replace("\"", " ",$_POST['telephone']) ;
+     $telephone = str_replace(";", " ",$telephon) ;
        
- 	if (empty($name)) {
+ 	if (empty(trim($name))) {
         $name= $fetched_ann["name"];
             }
-	if (empty($surname)) {
+	if (empty(trim($surname))) {
         $surname= $fetched_ann["surname"];
             }
-	if (empty($email)) {
+	if (empty(trim($email))) {
         $email= $fetched_ann["email"];
             }
-	if (empty($username)) {
+	if (empty(trim($username))) {
         $username= $fetched_ann["username"];
             }
-	if (empty($telephone)) {
+	if (empty(trim($telephone))) {
         $telephone= $fetched_ann["telephone"];
             }
 
