@@ -8,8 +8,10 @@ include("connect1.php");
 	 mysqli_select_db($conn,"gym");
  if(isset($_POST['send'])) {		
     $date = $_POST['date'] ;
-	$subject = str_replace("\"", " ",$_POST['subject']);
-	$message =str_replace("\"", " ", $_POST['maintext']);
+	$sub = str_replace("\"", " ",$_POST['subject']);
+	$subject = str_replace(";", " ",$sub);
+	$mess =str_replace("\"", " ", $_POST['maintext']);
+	$message =str_replace(";", " ", $mess);
 	
 	$query = "insert into announcements (date,subject,maintext) values('$date','$subject','$message')";
   $sqlcrt=mysqli_query($conn,$query); 
