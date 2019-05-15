@@ -1,4 +1,4 @@
-<?php
+﻿<?php
  session_start();
 require_once'regChecker.php';
 $app = new Checker();
@@ -34,21 +34,22 @@ if (!empty($_POST['btnRegister'])) {
     }
    
     
-    if ($_POST['name'] == "") {
+    if (trim($_POST['name']) == "") {
         $register_error_message = 'Name field is required!';
-    } else if ($_POST['surname'] == "") {
+    } else if (trim($_POST['surname']) == "") {
         $register_error_message = 'Surname field is required!';
     } else if ($_POST['tos'] == "") {
         $register_error_message = 'You did not agree to the terms and conditions';
     }
-    else if ($_POST['email'] == "") {
+    else if (trim($_POST['email']) == "") {
         $register_error_message = 'Email field is required!';
-    } else if ($_POST['username'] == "") {
+    } else if (trim($_POST['username']) == "") {
         $register_error_message = 'Username field is required!';
-    } else if ($_POST['password'] == "") {
+    } else if (trim($_POST['password']) == "") {
         $register_error_message = 'Password field is required!';
     }else if(preg_match("/^.*(?=.{8,})(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]).*$/", $_POST['password']) === 0){
-        $register_error_message = '<p class="errText">Password must be at least 8 characters and must contain at least one lower case letter, one upper case letter and one digit</p>';
+        $register_error_message = '<p class="errText">Password must be at least 8 characters and must contain 
+	at least one lower case letter, one upper case letter and one digit</p>';
     }else if (!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
         $register_error_message = 'Invalid email address!';
     } else if ($app->isEmail($DBcon,$_POST['email'])) {
@@ -149,7 +150,7 @@ if (!empty($_POST['btnRegister'])) {
             ?>
            <form action="register.php" method="post" class="form-signin">
               <div class="form-label-group">
-                <input type="text" id="inputEmail" class="form-control" name="name" placeholder="*Name" />
+                <input type="text" id="input" class="form-control" name="name" placeholder="*Name" />
               
               </div>
                <div class="form-label-group">
@@ -157,11 +158,11 @@ if (!empty($_POST['btnRegister'])) {
                 
               </div>
                <div class="form-label-group">
-                <input type="number" id="inputEmail" class="form-control" name="telephone" placeholder="Telephone" />
+                <input type="number" id="inputT" class="form-control" name="telephone" placeholder="Telephone" />
               
               </div>
                <div class="form-label-group">
-                <input type="text" id="inputEmail" class="form-control" name="email" placeholder="*Email address" />
+                <input type="text" id="inputA" class="form-control" name="email" placeholder="*Email address" />
                 
               </div>
                <div class="form-label-group">
@@ -169,7 +170,9 @@ if (!empty($_POST['btnRegister'])) {
                 
               </div>
               <div class="form-label-group">
-                <input type="password" id="inputPassword" class="form-control" name="password" placeholder="Password"/>
+		<h8><span style="font-size: 70%; color:red;">Password must be at least 8 characters and must contain 
+	at least one lower case letter, one upper case letter and one digit</span></h8>
+                <input type="password" id="inputPassword" class="form-control" name="password" placeholder="*Password"/>
                 
               </div>
             <div class="form-check-inline">
