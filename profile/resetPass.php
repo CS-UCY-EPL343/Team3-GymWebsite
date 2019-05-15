@@ -121,7 +121,7 @@ if (!empty($_POST['btnLogin'])) {
             ?>
            <form action="resetPass.php" method="post" class="form-signin">
               <div class="form-label-group">
-                <input type="text"  class="form-control" name="currentpassword" placeholder="Current Password" />
+                <input type="password"  class="form-control" name="currentpassword" placeholder="Current Password" />
               
               </div>
                <div class="form-label-group">
