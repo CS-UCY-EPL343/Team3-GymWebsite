@@ -52,7 +52,7 @@ function DisableSpecificDates(date) {
 	var dateToday = new Date(); 
     $( "#from" ).datepicker({
    
-    defaultDate: "+1w",
+    
       changeMonth: true,
       numberOfMonths: 1,
         minDate: dateToday,
@@ -62,7 +62,7 @@ function DisableSpecificDates(date) {
     });
   });
    
-    
+    $("#mydate").datepicker().datepicker("setDate", new Date());
     </script>
     
     
@@ -212,7 +212,12 @@ function DisableSpecificDates(date) {
     
   
     if(isset($_POST["avalable"])) {
-       
+        $today =time();
+             if($day<$today){
+                 $_SESSION['error']="Please select date"; 
+                  echo '<meta http-equiv="refresh" content="0">';
+             }else{
+        
         $sql3 = "SELECT * FROM $servicestb where title='$service' ";
        
         $count2 = mysqli_query($conn, $sql3);
@@ -353,7 +358,7 @@ function DisableSpecificDates(date) {
            
 		
     <?php
-    
+             }
     
     }
     ?>
@@ -470,7 +475,8 @@ if ($role=="physiotherapist")  {
         $day=$_SESSION["day"];
 		 $_SESSION["time"]=$time;
     
-       
+      
+            
 		// prevent double booking
 		
         
@@ -521,9 +527,9 @@ if ($role=="physiotherapist")  {
         
           $_SESSION['error']="Booking succeed."; 
               echo '<meta http-equiv="refresh" content="0">';
-         }
+         
   
-
+         }
     
     if(isset($_POST["cancel"])) {
         $id = intval(htmlspecialchars($_POST["id"]));
@@ -555,7 +561,7 @@ if ($role=="physiotherapist")  {
                 $_SESSION['error']="Booking cancelled.";
               $email=$_SESSION['email'];
 
-$msg= "This is MS FiT Care Gym. \n\nYour booking for ".$service." on ".$corday." at ".$time." with ID:".$id["id"]." was succesfully cancelled!";
+$msg= "This is MS FiT Care Gym. \n\nYour booking with ID:".$_POST["id"]." was succesfully cancelled!";
         $msg=wordwrap($msg,70);
         
         mail($email,"Booking Cancelation ",$msg);
@@ -683,6 +689,7 @@ $msg= "This is MS FiT Care Gym. \n\nYour booking for ".$service." on ".$corday."
           <input name="delete" type="submit" class="btn btn-lg btn-success round "value="Clear Cancelled Bookings" />
 		</form>
       <a href="pdf.php" class="btn btn-lg btn-success round ">PDF File</a>
+        <br>
 
     <div class="row">
         <div class="col-lg-12 col-md-10">

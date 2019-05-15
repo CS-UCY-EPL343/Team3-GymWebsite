@@ -7,54 +7,27 @@ include("../announcements/GeneralAuth.php");
 
 $res=mysqli_query($conn,"SELECT * FROM book");
            
-     require('fpdf/fpdf.php');
+    
 
-class PDF extends FPDF
-{
-// Page header
-function Header()
-{
- $this->Image('../img/logo-test.png',10,10,30);
-}
-// Page footer
-function Footer()
-{
- $this->SetY(-20);
- $this->Image('images/pdf-footer.jpg');
-}
-}
-
-// Instanciation of inherited class
-$pdf = new PDF();
-$pdf->SetMargins(10,60,10);
-$pdf->AliasNbPages();
+require('fpdf/fpdf.php');
+$pdf = new FPDF();
 $pdf->AddPage();
 
 
 
 
+$pdf->SetFont('Arial','B',12);  
 
-
-
-
-
-
-
-
-
-
-
-
-//require('fpdf/fpdf.php');
-//$pdf = new FPDF();
-//$pdf->AddPage();
-
-
-
-
-$pdf->SetFont('Arial','B',12);	
-
-//$pdf->Image('../img/logo-test.png',10,10,30);
+$pdf->Image('../img/logo-test.png',10,10,30);
+$pdf->SetTitle('Title');
+ $pdf-> Cell(30,20,"",0,0,C,false);
+ $pdf->SetFont('Arial','B',20); 
+ $pdf-> Cell(150,20,"ALL BOOKINGS",0,0,C,false);
+$pdf->SetFont('Arial','B',12);  
+ $pdf->Ln();
+ $pdf-> Cell(150,20,"",0,0,C,false);
+ 
+ $pdf->Ln();
 
 
  $pdf->Ln();
@@ -64,7 +37,7 @@ $pdf->SetFillColor(193,229,252);
 
  $pdf-> Cell(30,20," ID",1,0,C,true);
  $pdf-> Cell(30,20," Username",1,0,C,true);
- $pdf-> Cell(30,20," Service",1,0,C,true);
+ $pdf-> Cell(35,20," Service",1,0,C,true);
  $pdf-> Cell(30,20," Date",1,0,C,true);
  $pdf-> Cell(30,20," Time",1,0,C,true);
  $pdf-> Cell(30,20," Cancelled",1,0,C,true);
@@ -75,7 +48,7 @@ $pdf->SetFillColor(193,229,252);
     {
      $pdf-> Cell(30,10," ".$row['id'],1,0,C,false);
      $pdf-> Cell(30,10," ".$row['username'],1,0,C,false);
-     $pdf-> Cell(30,10," ".$row['service'],1,0,C,false);
+     $pdf-> Cell(35,10," ".$row['service'],1,0,C,false);
      $pdf-> Cell(30,10," ".date('m/d/Y',$row["day"]),1,0,C,false);
      $pdf-> Cell(30,10," ".$row['time'],1,0,C,false);
      if ($row["canceled"]==1){
