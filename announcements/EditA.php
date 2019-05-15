@@ -59,10 +59,10 @@ include("auth.php");
         <a class="nav-link" href="../index.php"><i class="fas fa-home fa-fw"> </i>Home </a>
       </li>  
       <li class="nav-item">
-          <a class="nav-link" href="../profile.html"> <i class="fas fa-user fa-fw"></i>Profile</a>
+          <a class="nav-link" href="../profile/profile.php"> <i class="fas fa-user fa-fw"></i>Profile</a>
       </li>
      <li class="nav-item">
-        <a class="nav-link" href="../programs.html"><i class="fas fa-dumbbell fa-fw"></i>Programs</a>
+        <a class="nav-link" href="../programs/program.php"><i class="fas fa-dumbbell fa-fw"></i>Programs</a>
       </li>
     
           <li class="nav-item">
